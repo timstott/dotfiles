@@ -1,0 +1,12 @@
+# OS X
+alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Unix
+alias l='ls -la'
+alias ll='ls -l'
+
+# Bundler
+alias be='bundle exec'
+
+# Git
+alias g='git'
