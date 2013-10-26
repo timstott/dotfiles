@@ -40,15 +40,7 @@ ZSH_THEME="cloud"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx rvm bundler)
-
-# Fixes slow git auto-completion
-__git_files () { 
-    _wanted files expl 'local files' _files     
-}
-
-# Disbales autocorret for git
-alias git='nocorrect git'
+plugins=(gitfast osx rvm bundler)
 
 source $ZSH/oh-my-zsh.sh
 

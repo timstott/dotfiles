@@ -9,4 +9,15 @@ alias ll='ls -l'
 alias be='bundle exec'
 
 # Git
+alias git='nocorrect git'
 alias g='git'
+alias gst='git status'
+alias gci='git commit'
+alias gca='git commit -a'
+alias gco='git checkout'
+alias gp='git push'
+alias gl='git pull'
+alias grh='git reset HEAD'
+
+# CTags
+alias ctags="`brew --prefix`/bin/ctags"
