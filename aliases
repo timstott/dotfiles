@@ -21,3 +21,11 @@ alias grh='git reset HEAD'
 
 # CTags
 alias ctags="`brew --prefix`/bin/ctags"
+
+# Sublime
+alias packages_subl="cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User"
+
+# Config Shortcuts
+alias zshconfig="$EDITOR ~/.zshrc"
+alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
+alias aliasesconfig="$EDITOR ~/.aliases"

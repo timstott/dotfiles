@@ -7,15 +7,11 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="cloud"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
 # Uncomment this to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
@@ -44,14 +40,17 @@ plugins=(gitfast osx rvm bundler)
 
 source $ZSH/oh-my-zsh.sh
 
-# Add paths 
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
-
 # Postgres
-export PATH=$PATH:/Applications/Postgres.app/Contents/MacOS/bin
+export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
+
+# Virtual Box
+export PATH=/Applications/VirtualBox.app/Contents/MacOS:$PATH
 
 # Heroku Toolbelt
-export PATH=$PATH:/usr/local/heroku/bin
+export PATH=/usr/local/heroku/bin:$PATH
+
+# Add paths
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
 
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases ]
