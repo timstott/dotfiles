@@ -1,0 +1,12 @@
+[color]
+  ui = true
+[alias]
+  st = status
+  br = branch
+  co = checkout
+  ci = commit
+  ft = fetch
+[push]
+  default = current
+[include]
+  path = .gitconfig.local
