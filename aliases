@@ -8,7 +8,10 @@ alias ll='ls -l'
 # Bundler
 alias be='bundle exec'
 
-# Git
+
+alias zeus='nocorrect zeus'
+
+#Git
 alias git='nocorrect git'
 alias g='git'
 alias gst='git status'
