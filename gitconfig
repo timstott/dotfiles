@@ -6,7 +6,14 @@
   co = checkout
   ci = commit
   ft = fetch
+  gr = log --graph --decorate --date=short --format=format:'%C(bold yellow)%h%C(reset) (%ar) %C(white)%s%C(reset) %C(dim white)%an%C(reset) %C(bold red)%d%C(reset)' --all
+  sl = log --oneline --decorate -25
 [push]
   default = current
 [include]
   path = .gitconfig.local
+[core]
+  editor = vim
+  autocrlf = input
+  excludesfile = ~/.gitignore_global
+
