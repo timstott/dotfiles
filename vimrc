@@ -17,9 +17,9 @@ endif
 
 filetype plugin indent on
 
-" color scheme
-colorscheme solarized
+" Color scheme
 set background=dark
+colorscheme solarized
 
 set scrolloff=3
 set encoding=utf-8
@@ -37,7 +37,7 @@ set undofile
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set expandtab
+  set expandtab
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
@@ -50,7 +50,8 @@ set formatoptions=n
 "  ---------------------------------------------------------------------------
 "  Mappings
 "  ---------------------------------------------------------------------------
-imap jj <ESC>  " Remape ESC
+inoremap jk <ESC>  " Remape ESC
+inoremap kj <ESC>  " Remape ESC
 
 " Searching / moving
 " vnoremap / /\v
@@ -60,33 +61,7 @@ set hlsearch
 set ignorecase smartcase
 
 " turn search highlight off
-nnoremap <leader><space> :noh<cr> 
-
-
-" Turn off arrow keys (this might not be a good idea for beginners, but it is
-" the best way to ween yourself of arrow keys on to hjkl)
-" http://yehudakatz.com/2010/07/29/everyone-who-tried-to-convince-me-to-use-vim-was-wrong/
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>"
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-
-
-
-" ACK
-set grepprg=ack
-
-" ,a to Ack (search in files)
-nnoremap <leader>a :Ack 
-
-" Ack settings: https://github.com/krisleech/vimfiles/wiki/Make-ack-ignore-files
-
-" Auto format
-map === mmgg=G`m^zz
+nnoremap <leader><space> :noh<cr>
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -113,7 +88,6 @@ nnoremap <leader><leader> <c-^>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
-
 
 
 "  ---------------------------------------------------------------------------

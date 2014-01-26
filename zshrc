@@ -55,5 +55,8 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases ]
 
+# Environment variables
+[[ -f ~/.env ]] && source ~/.env ]
+
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
