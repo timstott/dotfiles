@@ -36,7 +36,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gitfast osx rvm bundler zeus)
+plugins=(gitfast osx rvm bundler tmuxinator)
 
 source $ZSH/oh-my-zsh.sh
 

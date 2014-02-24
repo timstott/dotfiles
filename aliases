@@ -3,13 +3,12 @@ alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resourc
 
 # Unix
 alias l='ls -la'
-alias ll='ls -l'
+alias ll='ls -la'
+alias lh='ls -lAh'
 
 # Bundler
 alias be='bundle exec'
 
-
-alias zeus='nocorrect zeus'
 
 #Git
 alias git='nocorrect git'
@@ -21,9 +20,10 @@ alias gco='git checkout'
 alias gp='git push'
 alias gl='git pull'
 alias grh='git reset HEAD'
+alias grhh='git reset HEAD --hard'
 
 # CTags
-alias ctags="`brew --prefix`/bin/ctags"
+#alias ctags="`brew --prefix`/bin/ctags"
 
 # Sublime
 alias packages_subl="cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User"
@@ -32,3 +32,4 @@ alias packages_subl="cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias aliasesconfig="vim ~/.aliases"
+alias envconfig="vim ~/.env"
