@@ -1,5 +1,5 @@
-let mapleader = ","
-let g:mapleader = ","
+" Leader
+let mapleader = " "
 
 set backspace=2
 set nocompatible  " Use Vim settings, rather then Vi settings
@@ -7,9 +7,17 @@ set encoding=utf-8
 set nobackup
 set nowritebackup
 set noswapfile
+set history=50
+set ruler         " Show the cursor position all the time
 set showcmd       " Display incomplete commands
+set incsearch     " Do incremental searching
 set laststatus=2  " Always display the status line
-syntax enable
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  syntax on
+endif
 
 if filereadable(expand("~/.vimrc.bundles"))
     source ~/.vimrc.bundles
@@ -21,26 +29,34 @@ filetype plugin indent on
 set background=dark
 colorscheme solarized
 
+" Soft tab, 2 space
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·
+
+" Number
+set number
+set numberwidth=5
+
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
 set scrolloff=3
 set encoding=utf-8
-set autoindent
+"set autoindent
 set smartindent
 set showmode
 set hidden
 set wildmode=list:longest   " use emacs-style tab completion when selecting files, etc
 set visualbell              " use visual bell instead of beeping
 set cursorline
-set number
 set undofile
-
-" Soft tab, 2 space
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-  set expandtab
-
-" Display extra whitespace
-set list listchars=tab:»·,trail:·
 
 set nowrap
 " set textwidth=79
@@ -73,85 +89,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Switch between buffers
-noremap <tab> :bn<CR>
-noremap <S-tab> :bp<CR>
-" close buffer
-nmap <leader>d :bd<CR>
-" close all buffers
-nmap <leader>D :bufdo bd<CR>
-
-" Switch between last two buffers
-nnoremap <leader><leader> <c-^>
-
-" Edit/View files relative to current directory
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>e :edit %%
-map <leader>v :view %%
-
-
-"  ---------------------------------------------------------------------------
-"  Plugins
-"  ---------------------------------------------------------------------------
-
-" NERDTree
-let NERDTreeShowBookmarks = 0
-let NERDChristmasTree = 1
-let NERDTreeWinPos = "left"
-let NERDTreeHijackNetrw = 1
-let NERDTreeQuitOnOpen = 1
-let NERDTreeWinSize = 30 
-let NERDTreeChDirMode = 2
-let NERDTreeDirArrows = 1
-" open file browser
-map <leader>p :NERDTreeToggle<cr>
-
-" TagList
-set tags=./tags;
-" Support for https://github.com/ivalkeen/guard-ctags-bundler
-set tags+=gems.tags
-map <leader>l :TlistToggle <cr>
-let Tlist_Use_Right_Window = 1
-let Tlist_WinWidth = 60
-" Generate ctags for all bundled gems as well
-map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
-
-" Use only current file to autocomplete from tags
-" set complete=.,t
-set complete=.,w,b,u,t,i
-
-" Buffer window (find file in open buffers)
-nmap <silent> <leader>b :FufBuffer<CR>
-
-" AutoClose
-" let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}'} 
-" let g:AutoCloseProtectedRegions = ["Character"] 
-
-
-"  ---------------------------------------------------------------------------
-"  Ruby/Rails
-"  ---------------------------------------------------------------------------
-
-" Execute current buffer as ruby
-map <S-r> :w !ruby<CR>
-
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets<cr>
-map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets<cr>
-
-" View routes or Gemfile in large split
-map <leader>gr :topleft :split config/routes.rb<cr>
-map <leader>gg :topleft 100 :split Gemfile<cr>
-
-" Skip to Model, View or Controller
-map <Leader>m :Rmodel 
-map <Leader>v :Rview 
-map <Leader>c :Rcontroller 
+" configure syntastic syntax checking to check on open as well as save
+let g:syntastic_check_on_open=1
 
 " Store temporary files in a central spot
 set backup
