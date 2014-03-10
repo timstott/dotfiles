@@ -9,6 +9,8 @@ alias lh='ls -lAh'
 # Bundler
 alias be='bundle exec'
 
+# Spring
+alias ss='spring stop'
 
 #Git
 alias git='nocorrect git'

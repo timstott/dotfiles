@@ -16,4 +16,7 @@
   editor = vim
   autocrlf = input
   excludesfile = ~/.gitignore_global
-
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = false
