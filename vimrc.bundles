@@ -30,6 +30,8 @@ Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/nerdtree'
+Bundle 'terryma/vim-multiple-cursors'
 
 filetype on
 
