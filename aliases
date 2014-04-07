@@ -1,6 +1,3 @@
-# OS X
-alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
 # Unix
 alias l='ls -la'
 alias ll='ls -la'
@@ -24,6 +21,9 @@ alias gl='git pull'
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
 
+# Other
+alias rshell="source ~/.zshrc"
+
 # CTags
 #alias ctags="`brew --prefix`/bin/ctags"
 
@@ -33,5 +33,6 @@ alias packages_subl="cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
 # Config Shortcuts
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias aliasesconfig="vim ~/.aliases"
+alias aliasconfig="vim ~/.aliases"
 alias envconfig="vim ~/.env"
+alias vimconfig="vim ~/.vimrc"

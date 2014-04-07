@@ -73,7 +73,11 @@ set number
 set numberwidth=5
 
 " Snippets are activated by Shift+Tab
-let g:snippetsEmu_key = "<S-Tab>"
+" let g:snippetsEmu_key = "<S-Tab>"
+let g:UltiSnipsExpandTrigger = "<S-Tab>"
+let g:UltiSnipsListSnippets  = "<c-s>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Tab completion
 " will insert tab at beginning of line,
@@ -128,7 +132,7 @@ let g:syntastic_check_on_open=1
 
 " Make Vim use RVM correctly when using Zsh
 " https://rvm.beginrescueend.com/integration/vim/
-set shell=/bin/sh
+set shell=/bin/zsh
 
 " My mappings
 inoremap jj <ESC>
@@ -143,3 +147,8 @@ set encoding=utf-8      " encoding inside vim
 set gdefault            " global substituion by default
 set cursorline
 set cc=80               " column ruler
+
+" nerdtree mappings
+map <leader>n :NERDTreeToggle<CR>
+
+let g:ctrlp_show_hidden=1 "crlp show hidden files

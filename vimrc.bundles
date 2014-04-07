@@ -31,7 +31,11 @@ Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdtree'
+Bundle 'rking/ag.vim'
 Bundle 'terryma/vim-multiple-cursors'
+" snippets repo
+Bundle 'honza/vim-snippets'
+Bundle 'SirVer/ultisnips'
 
 filetype on
 
