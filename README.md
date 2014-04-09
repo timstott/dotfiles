@@ -2,6 +2,10 @@
 
 ## Requirements
 
+[Homebrew](http://brew.sh/) package manager for OS X
+
+    brew bundle
+
 Set zsh as your login shell:
 
     chsh -s $(which zsh)
@@ -29,93 +33,69 @@ You can safely run `rcup` multiple times to update:
 
     rcup
 
-Make your own customizations
-----------------------------
+# What's in it?
 
-Put your customizations in dotfiles appended with `.local`:
+## ZSH
 
-* `~/.aliases.local`
-* `~/.gitconfig.local`
-* `~/.gvimrc.local`
-* `~/.tmux.conf.local`
-* `~/.vimrc.local`
-* `~/.vimrc.bundles.local`
-* `~/.zshrc.local`
+### Aliases
 
-For example, your `~/.aliases.local` might look like this:
+* `be` - `bundle exec`
+* `ss` -  `spring stop`
+* `git-churn` to show churn for the files changed in the branch.
+* `rake` is `zeus rake` if using [Zeus](https://github.com/burke/zeus) on the
+  project in current directory.
+* `tat` to attach to tmux session named the same as the current directory.
+* `v` for `$VISUAL`.
 
-    # Productivity
-    alias todo='$EDITOR ~/.todo'
+## Git
 
-Your `~/.gitconfig.local` might look like this:
+### Aliases
+`st` status
+`br` branch
+`co` checkout
+`ci` commit
 
-    [alias]
-      l = log --pretty=colored
-    [pretty]
-      colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
-    [user]
-      name = Dan Croak
-      email = dan@thoughtbot.com
 
-Your `~/.zshrc.local` might look like this:
+## Vim - configuration:
 
-    # recommended by brew doctor
-    export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+Plugin management though [Vundle](https://github.com/gmarik/vundle)
 
-Your `~/.vimrc.bundles.local` might look like this:
-
-    Bundle 'Lokaltog/vim-powerline'
-    Bundle 'stephenmckinney/vim-solarized-powerline'
-
-What's in it?
--------------
-
-[vim](http://www.vim.org/) configuration:
-
+* [Solarized color scheme](https://github.com/altercation/vim-colors-solarized).
 * [Ctrl-P](https://github.com/kien/ctrlp.vim) for fuzzy file/buffer/tag finding.
-* [Rails.vim](https://github.com/tpope/vim-rails) for enhanced navigation of
-  Rails file structure via `gf` and `:A` (alternate), `:Rextract` partials,
-  `:Rinvert` migrations, etc.
-* Run [RSpec](https://www.relishapp.com/rspec) specs from vim.
-* Set `<leader>` to a single space.
-* Switch between the last two files with space-space.
-* Syntax highlighting for CoffeeScript, Textile, Cucumber, Haml, Markdown, and
-  HTML.
-* Use [Ag](https://github.com/ggreer/the_silver_searcher) instead of Grep when
-  available.
-* Use [Exuberant Ctags](http://ctags.sourceforge.net/) for tab completion.
-* Use [GitHub color scheme](https://github.com/croaky/vim-colors-github).
-* Use [Vundle](https://github.com/gmarik/vundle) to manage plugins.
+* [syntastic](https://github.com/scrooloose/syntastic) for syntax checking.
+* [Rails.vim](https://github.com/tpope/vim-rails) for enhanced navigation of Rails file structure
+* [RSpec](https://www.relishapp.com/rspec) specs from vim.
+* [Exuberant Ctags](http://ctags.sourceforge.net/) for tab completion.
+* [Ag](https://github.com/ggreer/the_silver_searcher) instead of Grep when available.
+* Syntax highlighting for CoffeeScript, Textile, Cucumber, Haml, Markdown, and HTML.
 
-tmux
-configuration:
+Custom Vim configuration kept to a minimum.
+
+MapLeader `space`
+ESC `jj`
+
+### File navigation
+
+`leader leader` Switch between the last two files
+
+`leader n` NerdTree toggle
+
+### Search and replace
+
+## Tmux
 
 * Improve color resolution.
 * Remove administrative debris (session name, hostname, time) in status bar.
 * Set prefix to `Ctrl+a` (like GNU screen).
 * Soften status bar color from harsh green to light gray.
 * Vi like bindings
-* Pipe yanked selection to clipboard
+* System clipboard integration
 
-[Ruby](https://www.ruby-lang.org/en/) configuration:
+## Powerline
 
-* Add trusted binstubs to the `PATH`.
-* Load rbenv into the shell, adding shims onto our `PATH`.
+Vim and Tmux have configuration for the [new
+powerline](https://github.com/Lokaltog/powerline)
 
-Shell aliases and scripts:
-
-* `b` for `bundle`.
-* `g` with no arguments is `git status` and with arguments acts like `git`.
-* `git-churn` to show churn for the files changed in the branch.
-* `m` for `rake db:migrate && rake db:rollback && rake db:migrate && rake db:test:prepare`.
-* `mcd` to make a directory and change into it.
-* `rake` is `zeus rake` if using [Zeus](https://github.com/burke/zeus) on the
-  project in current directory.
-* `replace foo bar **/*.rb` to find and replace within a given list of files.
-* `rk` for `rake`.
-* `rspec` is `zeus rspec` if using Zeus on the project in current directory.
-* `tat` to attach to tmux session named the same as the current directory.
-* `v` for `$VISUAL`.
 
 ## Credits
 
