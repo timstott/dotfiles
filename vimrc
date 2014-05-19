@@ -151,4 +151,6 @@ set cc=80               " column ruler
 " nerdtree mappings
 map <leader>n :NERDTreeToggle<CR>
 
-let g:ctrlp_show_hidden=1 "crlp show hidden files
+let g:ctrlp_show_hidden=1 " crlp show hidden files
+
+set clipboard=unnamed     " user system clipboard
