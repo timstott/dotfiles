@@ -26,15 +26,15 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rvm'
 " quoting/parenthesizing made simple
 Bundle 'tpope/vim-surround'
-Bundle 'tsaleh/vim-matchit'
+Bundle 'vim-scripts/matchit.zip'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'scrooloose/nerdtree'
 Bundle 'rking/ag.vim'
 Bundle 'terryma/vim-multiple-cursors'
 " snippets repo
-Bundle 'honza/vim-snippets'
-Bundle 'SirVer/ultisnips'
+" Bundle 'honza/vim-snippets'
+" Bundle 'SirVer/ultisnips'
 
 filetype on
 

@@ -74,8 +74,8 @@ set numberwidth=5
 
 " Snippets are activated by Shift+Tab
 " let g:snippetsEmu_key = "<S-Tab>"
-let g:UltiSnipsExpandTrigger = "<S-Tab>"
-let g:UltiSnipsListSnippets  = "<c-s>"
+" let g:UltiSnipsExpandTrigger = "<S-Tab>"
+" let g:UltiSnipsListSnippets  = "<c-s>"
 " let g:UltiSnipsJumpForwardTrigger="<c-b>"
 " let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
@@ -115,7 +115,7 @@ nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
 nnoremap <Leader>a :call RunAllSpecs()<CR>
 
-let g:rspec_command = "!bin/rspec {spec}"
+let g:rspec_command = "!bundle exec rspec {spec}"
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -132,7 +132,7 @@ let g:syntastic_check_on_open=1
 
 " Make Vim use RVM correctly when using Zsh
 " https://rvm.beginrescueend.com/integration/vim/
-set shell=/bin/zsh
+set shell=bash
 
 " My mappings
 inoremap jj <ESC>
