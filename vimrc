@@ -147,6 +147,8 @@ set encoding=utf-8      " encoding inside vim
 set gdefault            " global substituion by default
 set cursorline
 set cc=80               " column ruler
+set foldmethod=indent
+set foldlevel=20
 
 " nerdtree mappings
 map <leader>n :NERDTreeToggle<CR>
@@ -154,3 +156,7 @@ map <leader>n :NERDTreeToggle<CR>
 let g:ctrlp_show_hidden=1 " crlp show hidden files
 
 set clipboard=unnamed     " user system clipboard
+
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
