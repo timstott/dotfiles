@@ -30,6 +30,8 @@ Clone repository:
 * `git br` or `gb` - branch
 * `git co` - checkout
 * `git ci` - commit
+* `grbc` - rebase continue
+* `grba` - rebase abort
 
 ## Vim
 
