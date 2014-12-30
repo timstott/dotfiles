@@ -16,7 +16,8 @@ Set zsh as your login shell:
 
 Clone repository:
 
-    git clone git://github.com/timstott/dotfiles.git
+    git clone git://github.com/timstott/dotfiles.git && cd dotfiles
+    rake install
 
 ## ZSH
 
