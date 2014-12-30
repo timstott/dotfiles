@@ -1,162 +1,104 @@
-" Leader
-let mapleader = " "
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
 
-set backspace=2
-set nocompatible  " Use Vim settings, rather then Vi settings
-set encoding=utf-8
-set nobackup
-set nowritebackup
+" ================ General Config ====================
+
+set number                      " Line numbers are good
+set backspace=indent,eol,start  " Allow backspace in insert mode
+set history=1000                " Store lots of :cmdline history
+set showcmd                     " Show incomplete cmds down the bottom
+set showmode                    " Show current mode down the bottom
+set gcr=a:blinkon0              " Disable cursor blink
+set visualbell                  " No sounds
+set autoread                    " Reload files changed outside vim
+
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
+
+" turn on syntax highlighting
+syntax on
+
+" Change leader to a comma because the backslash is too far away
+" That means all \x commands turn into ,x
+" The mapleader has to be set before vundle starts loading all
+" the plugins.
+let mapleader=","
+
+" =============== Vundle Initialization ===============
+" This loads all the plugins specified in ~/.vim/vundles.vim
+" Use Vundle plugin to manage all other plugins
+if filereadable(expand("~/.vim/vundles.vim"))
+  source ~/.vim/vundles.vim
+endif
+
+" ================ Turn Off Swap Files ==============
+
 set noswapfile
-set history=50
-set ruler         " Show the cursor position all the time
-set showcmd       " Display incomplete commands
-set incsearch     " Do incremental searching
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
+set nobackup
+set nowb
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
+" ================ Persistent Undo ==================
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+if has('persistent_undo')
+  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  set undodir=~/.vim/backups
+  set undofile
 endif
 
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-endif
+" ================ Indentation ======================
 
-filetype plugin indent on
-
-augroup vimrcex
-  autocmd!
-
-  " cucumber navigation commands
-  " autocmd user rails rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
-  " autocmd user rails rnavcommand config config -glob=**/* -suffix=.rb -default=routes
-
-  " set syntax highlighting for specific file types
-  autocmd bufread,bufnewfile appraisals set filetype=ruby
-  autocmd bufread,bufnewfile *.md set filetype=markdown
-
-  " enable spellchecking for markdown
-  autocmd filetype markdown setlocal spell
-
-  " automatically wrap at 80 characters for markdown
-  autocmd bufread,bufnewfile *.md setlocal textwidth=80
-augroup end
-
-" Soft tab, 2 space
-set tabstop=2
+set autoindent
+set smartindent
+set smarttab
 set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set expandtab
 
-" Display extra whitespace
+filetype plugin on
+filetype indent on
+
+" Display tabs and trailing spaces
 set list listchars=tab:»·,trail:·
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
+" Display 80th column
+set colorcolumn=80
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+set nowrap       " Don't wrap lines
+set linebreak    " Wrap lines at convenient points
 
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
+" ================ Folds ============================
 
-" Color scheme
-set background=dark
-colorscheme solarized
+set foldmethod=indent   " fold based on indent
+set foldnestmax=3       " deepest fold is 3 levels
+set nofoldenable        " dont fold by default
 
-" Number
-set number
-set numberwidth=5
+" ================ Completion =======================
 
-" Snippets are activated by Shift+Tab
-" let g:snippetsEmu_key = "<S-Tab>"
-" let g:UltiSnipsExpandTrigger = "<S-Tab>"
-" let g:UltiSnipsListSnippets  = "<c-s>"
-" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+set wildmode=list:longest
+set wildmenu                " enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*~ " stuff to ignore when tab completing
+set wildignore+=*vim/backups*
+set wildignore+=*sass-cache*
+set wildignore+=*DS_Store*
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif
 
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-set wildmode=list:longest,list:full
-set complete=.,w,t
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+"
+" ================ Scrolling ========================
 
-" Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+set scrolloff=8         " Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
 
-" Index ctags from any project, including those outside Rails
-map <Leader>ct :!ctags -R .<CR>
 
-" Switch between the last two files
-nnoremap <leader><leader> <c-^>
-
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
-" vim-rspec mappings
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
-nnoremap <Leader>a :call RunAllSpecs()<CR>
-
-let g:rspec_command = "!bundle exec rspec {spec}"
-
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
-
-" Make Vim use RVM correctly when using Zsh
-" https://rvm.beginrescueend.com/integration/vim/
-set shell=bash
-
-" My mappings
-inoremap jj <ESC>
-
-set hlsearch            " highlight all matches
-set ignorecase
-set smartcase
-
-set fileencoding=utf-8  " file encoding
-set encoding=utf-8      " encoding inside vim
-
-set gdefault            " global substituion by default
-set cursorline
-set cc=80               " column ruler
-set foldmethod=indent
-set foldlevel=20
-
-" nerdtree mappings
-map <leader>n :NERDTreeToggle<CR>
-
-let g:ctrlp_show_hidden=1 " crlp show hidden files
-
-set clipboard=unnamed     " user system clipboard
-
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+" ================ Custom Settings ========================
+source ~/.vim/settings.vim
