@@ -28,10 +28,6 @@ nnoremap <D-)> f)ci)
 nnoremap <D-[> f[ci[
 nnoremap <D-]> f]ci]
 
-" ==== NERD tree
-" ,nd for nerd tree
-nnoremap ,nd :NERDTreeToggle<CR>
-
 " move up/down quickly by using Cmd-j, Cmd-k
 " which will move us around by functions
 nnoremap <silent> <D-j> }

@@ -48,8 +48,11 @@ ESC ``
 ### Navigation
 
 * `Ctrl-p` - CtrlP
+
+### File Navigation
+
 * `leader-nd` - toggle NERDTree drawer
-`leader leader` Switch between the last two files
+* `Ctrl-\` - Show current file in NERDTree
 
 ### Search and replace
 
