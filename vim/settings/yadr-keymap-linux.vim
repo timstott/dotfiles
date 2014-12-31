@@ -39,10 +39,6 @@ autocmd FileType rspec map <buffer> <A-k> {
 autocmd FileType javascript map <buffer> <A-k> }
 autocmd FileType javascript map <buffer> <A-j> {
 
-" Command-/ to toggle comments
-map <A-/> :TComment<CR>
-imap <A-/> <Esc>:TComment<CR>i
-
 " Use Alt- numbers to pick the tab you want
 map <silent> <A-1> :tabn 1<cr>
 map <silent> <A-2> :tabn 2<cr>
@@ -53,12 +49,6 @@ map <silent> <A-6> :tabn 6<cr>
 map <silent> <A-7> :tabn 7<cr>
 map <silent> <A-8> :tabn 8<cr>
 map <silent> <A-9> :tabn 9<cr>
-
-" Create window splits easier. The default
-" way is Ctrl-w,v and Ctrl-w,s. I remap
-" this to vv and ss
-nnoremap <silent> vv <C-w>v
-nnoremap <silent> ss <C-w>s
 
 " Resize windows with arrow keys
 nnoremap <C-Up> <C-w>+
