@@ -147,6 +147,13 @@ nnoremap ` '
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
 
+" ============================
+" Tabularize - alignment
+" ============================
+" Hit leader-aa then type a character you want to align by
+nmap <leader>aa :Tabularize /
+vmap <leader>aa :Tabularize /
+
 " Get the current highlight group. Useful for then remapping the color
 map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
 
