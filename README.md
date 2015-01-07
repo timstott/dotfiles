@@ -42,7 +42,7 @@ Plugin management with [Vundle](https://github.com/gmarik/vundle)
 
 * Navigation - CtrlP
 
-MapLeader `space`
+MapLeader `space` or sometimes `comma` (because WIP)
 ESC ``
 
 ### Navigation
