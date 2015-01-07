@@ -48,6 +48,7 @@ ESC ``
 ### Navigation
 
 * `Ctrl-p` - CtrlP
+* `leader-b` - CtrlP in buffer mode
 
 ### File Navigation
 
