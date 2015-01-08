@@ -57,7 +57,13 @@ ESC ``
 
 ### Search/Code Navigation
 
+* `K` - Search the current word under the cursor and show results in quickfix window
+* `leader-gg` - Grep command line, type between quotes. Uses Ag Silver Searcher
 * `leader-mc` - mark this word for MultiCursor (like sublime). Use `Ctrl-n` (next), `Ctrl-p` (prev), `Ctrl-x`(skip) to add more cursors, then do normal vim things like edit the word
+
+### Rails & Ruby
+
+* `leader-gcp` - Grep Current Partial to find references to the current view partial
 
 ## Tmux
 
