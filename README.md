@@ -55,7 +55,9 @@ ESC ``
 * `leader-nd` - toggle NERDTree drawer
 * `Ctrl-\` - Show current file in NERDTree
 
-### Search and replace
+### Search/Code Navigation
+
+* `leader-mc` - mark this word for MultiCursor (like sublime). Use `Ctrl-n` (next), `Ctrl-p` (prev), `Ctrl-x`(skip) to add more cursors, then do normal vim things like edit the word
 
 ## Tmux
 
