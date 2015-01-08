@@ -45,13 +45,10 @@ Plugin management with [Vundle](https://github.com/gmarik/vundle)
 MapLeader `space` or sometimes `comma` (because WIP)
 ESC ``
 
-### Navigation
+### File Navigation
 
 * `Ctrl-p` - CtrlP
 * `leader-b` - CtrlP in buffer mode
-
-### File Navigation
-
 * `leader-nd` - toggle NERDTree drawer
 * `Ctrl-\` - Show current file in NERDTree
 
@@ -67,7 +64,7 @@ ESC ``
 
 ### Utility
 
-
+* `leader-aa` - align things (type a character/expression to align by, works in visual mode or by itself)
 * `leader-w` - strip trailing whitespaces
 
 ## Tmux
