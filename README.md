@@ -65,6 +65,11 @@ ESC ``
 
 * `leader-gcp` - Grep Current Partial to find references to the current view partial
 
+### Utility
+
+
+* `leader-w` - strip trailing whitespaces
+
 ## Tmux
 
 * Set prefix to `Ctrl-a` (like GNU screen)
