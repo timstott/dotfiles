@@ -14,6 +14,7 @@ task :install do
 
   create_symlinks(Dir.glob('ruby/*'))
   create_symlinks(Dir.glob('git/*'))
+  create_symlinks(Dir.glob('tigrc'))
   create_symlinks(Dir.glob('tmux/*'))
   create_symlinks(Dir.glob('vimrc'))
   create_symlinks(Dir.glob('zshrc'))
