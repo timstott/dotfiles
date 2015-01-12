@@ -62,8 +62,8 @@ source $ZSH/oh-my-zsh.sh
 # export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
 
 # Aliases
-source ~/.dotfiles/zsh/aliases.zsh
-source ~/.dotfiles/zsh/env.zsh
+source $HOME/.dotfiles/zsh/aliases.zsh
+source $HOME/.dotfiles/zsh/env.zsh
 
 # Environment variables
 # [[ -f ~/.env ]] && source ~/.env ]

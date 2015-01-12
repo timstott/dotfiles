@@ -17,6 +17,6 @@ alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
 
 
-alias edit-zshrc="vim ~/.zshrc"
-alias edit-aliases="vim ~/.aliases"
-alias reload-shell="source ~/.zshrc"
+alias edit-zshrc="vim $HOME/.zshrc"
+alias edit-aliases="vim $HOME/.dotfiles/zsh/aliases.zsh"
+alias reload-shell="source $HOME/.zshrc"
