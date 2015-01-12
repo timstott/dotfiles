@@ -21,9 +21,11 @@ Clone repository:
 
 ## ZSH
 
-### Aliases
+### Ruby
 
 * `be` - `bundle exec`
+* `zs` - `zeus start`
+* `zc` - `zeus console`
 
 ## Git
 

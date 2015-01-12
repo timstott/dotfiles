@@ -5,6 +5,10 @@ alias lh='ls -lAh'
 # Bundler
 alias be='bundle exec'
 
+# Zeus
+alias zs='zeus start'
+alias zc='zeus console'
+
 # Git
 alias git='nocorrect git'
 alias gs='git status'
