@@ -8,9 +8,7 @@ Malgomation of dotfiles goodness.
 
     brew bundle
 
-Set zsh as your login shell:
-
-    chsh -s $(which zsh)
+* zsh as your login shell: `chsh -s $(which zsh)`
 
 ## Install
 
@@ -27,7 +25,7 @@ Clone repository:
 * `zs` - `zeus start`
 * `zc` - `zeus console`
 
-## Git
+### Git
 
 * `git st` or `gs` - status
 * `git br` or `gb` - branch
@@ -35,6 +33,10 @@ Clone repository:
 * `git ci` - commit
 * `grbc` - rebase continue
 * `grba` - rebase abort
+
+### Secrets
+
+Create a secrets dotfile. ` touch ~/.secrets`
 
 ## Vim
 

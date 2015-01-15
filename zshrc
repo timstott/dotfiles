@@ -64,6 +64,7 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 source $HOME/.dotfiles/zsh/aliases.zsh
 source $HOME/.dotfiles/zsh/env.zsh
+[[ -f "$HOME/.secrets" ]] && source "$HOME/.secrets"
 
 # Environment variables
 # [[ -f ~/.env ]] && source ~/.env ]
