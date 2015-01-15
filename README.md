@@ -4,10 +4,7 @@ Malgomation of dotfiles goodness.
 
 ## Requirements
 
-[Homebrew](http://brew.sh/) package manager for OS X
-
-    brew bundle
-
+* [Homebrew](http://brew.sh/) package manager for OS X
 * zsh as your login shell: `chsh -s $(which zsh)`
 
 ## Install
