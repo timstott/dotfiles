@@ -64,10 +64,13 @@ ESC ``
 ### Rails & Ruby
 
 * `leader-gcp` - Grep Current Partial to find references to the current view partial
+* `leader-pt` - `puts` selected value or value under the cursor
+* `leader-pit` - `puts` inspected selected value or value under the cursor
 
 ### Utility
 
-* `leader-aa` - align things (type a character/expression to align by, works in visual mode or by itself)
+* `leader-aa` - align things (type a character/expression to align by, works 
+   in visual mode or by itself)
 * `leader-w` - strip trailing whitespaces
 
 ## Tmux
