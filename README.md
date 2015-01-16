@@ -57,7 +57,9 @@ ESC ``
 
 * `K` - Search the current word under the cursor and show results in quickfix window
 * `leader-gg` - Grep command line, type between quotes. Uses Ag Silver Searcher
-* `leader-mc` - mark this word for MultiCursor (like sublime). Use `Ctrl-n` (next), `Ctrl-p` (prev), `Ctrl-x`(skip) to add more cursors, then do normal vim things like edit the word
+* `leader-mc` - mark this word for MultiCursor (like sublime).
+   Use `Ctrl-n` (next), `Ctrl-p` (prev), `Ctrl-x`(skip) to add more cursors,
+   then do normal vim things like edit the word
 
 ### Rails & Ruby
 
@@ -73,6 +75,12 @@ ESC ``
 * Set prefix to `Ctrl-a` (like GNU screen)
 * Vimization
 * System clipboard integration
+
+-------------------------------------------------------------------------------
+
+## Tips & Tricks
+
+* debug vim keymapping `:verbose map [keycombo]`
 
 ## Credits
 
