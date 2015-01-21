@@ -6,34 +6,30 @@ task default: 'install'
 
 desc "Hook dotfiles into system-standard positions."
 task :install do
-  puts
   puts "======================================================"
-  puts "Dotfiles"
+  puts "Installing Dotfiles"
   puts "======================================================"
   puts
 
-  create_symlinks(Dir.glob('ruby/*'))
-  create_symlinks(Dir.glob('git/*'))
-  create_symlinks(Dir.glob('tigrc'))
-  create_symlinks(Dir.glob('tmux/*'))
-  create_symlinks(Dir.glob('vimrc'))
-  create_symlinks(Dir.glob('zshrc'))
-  create_symlinks(Dir.glob('vim'))
+  install_symlinks
   Rake::Task["install_vundle"].execute
+  install_vundles
 end
 
 task :update do
-  Rake::Task["install"].execute
+
+  run "cd $HOME/.dotfiles"
+  run "git pull --rebase --prune"
+  install_symlinks
+  install_vundles
 end
 
-desc "Runs Vundle installer in a clean vim environment"
+desc "Runs Vundle installer"
 task :install_vundle do
   puts "======================================================"
-  puts "Installing and updating vundles."
-  puts "The installer will now proceed to run BundleInstall."
+  puts "Installing Vundle."
   puts "======================================================"
-
-  puts ""
+  puts
 
   vundle_path = File.join('vim','bundle', 'vundle')
   unless File.exists?(vundle_path)
@@ -42,8 +38,6 @@ task :install_vundle do
       git clone --branch v0.10.2 --depth 1 https://github.com/gmarik/vundle.git #{vundle_path}
     }
   end
-
-  install_vundles
 end
 
 private
@@ -73,6 +67,16 @@ def create_symlinks(files)
     puts "=========================================================="
     puts
   end
+end
+
+def install_symlinks
+  create_symlinks(Dir.glob('ruby/*'))
+  create_symlinks(Dir.glob('git/*'))
+  create_symlinks(Dir.glob('tigrc'))
+  create_symlinks(Dir.glob('tmux/*'))
+  create_symlinks(Dir.glob('vimrc'))
+  create_symlinks(Dir.glob('zshrc'))
+  create_symlinks(Dir.glob('vim'))
 end
 
 def install_vundles
