@@ -11,20 +11,20 @@ function! GetVisual()
 endfunction
 
 " Grep the current word using K (mnemonic Kurrent)
-nnoremap <silent> K :Ag <cword><CR>
+nnoremap <silent> K :Ag! <cword><CR>
 
 " Grep visual selection
-vnoremap K :<C-U>execute "Ag " . GetVisual()<CR>
+vnoremap K :<C-U>execute "Ag! " . GetVisual()<CR>
 
 " Grep current word up to the next exclamation point using leader-K
-nnoremap <leader>K viwf!:<C-U>execute "Ag " . GetVisual()<CR>
+nnoremap <leader>K viwf!:<C-U>execute "Ag! " . GetVisual()<CR>
 
 " Grep for 'def foo'
-nnoremap <silent> <leader>gd :Ag 'def <cword>'<CR>
+nnoremap <silent> <leader>gd :Ag! 'def <cword>'<CR>
 
 " leader-gg = Grep! - using Ag the silver searcher
 " open up a grep line, with a quote started for the search
-nnoremap <leader>gg :Ag ""<left>
+nnoremap <leader>gg :Ag! ""<left>
 
 " Grep current partial
 function! AgCurrentPartial()
@@ -37,6 +37,3 @@ endfunction
 command! AgCurrentPartial call AgCurrentPartial()
 
 nnoremap <leader>gcp :AgCurrentPartial<CR>
-
-" Grep for usages of the current file
-nnoremap <leader>gcf :exec "Ag " . expand("%:t:r")<CR>
