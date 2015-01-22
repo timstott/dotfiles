@@ -14,7 +14,7 @@ endfunction
 nnoremap <silent> K :Ag! <cword><CR>
 
 " Grep visual selection
-vnoremap K :<C-U>execute "Ag! " . GetVisual()<CR>
+vnoremap K :<C-U>execute "Ag! '" . GetVisual() . "'"<CR>
 
 " Grep current word up to the next exclamation point using leader-K
 nnoremap <leader>K viwf!:<C-U>execute "Ag! " . GetVisual()<CR>
