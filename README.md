@@ -66,6 +66,10 @@ ESC ``
 * `leader-gcp` - Grep Current Partial to find references to the current view partial
 * `leader-pt` - `puts` selected value or value under the cursor
 * `leader-pit` - `puts` inspected selected value or value under the cursor
+* `leader-"` `leader-'` `leader-]` `leader-)` `leader-}` - surround a
+   word or visual selection in these common wrappers
+*  `leader-#` - does #{ruby interpolation}
+
 
 ### Utility
 
