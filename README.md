@@ -88,6 +88,7 @@ ESC ``
 ## Tips & Tricks
 
 * debug vim keymapping `:verbose map [keycombo]`
+* start vim without vimrc `vim -u NONE`
 
 ## Credits
 
