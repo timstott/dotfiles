@@ -1,6 +1,7 @@
 Bundle "briancollins/vim-jst"
 Bundle "pangloss/vim-javascript"
 Bundle "othree/javascript-libraries-syntax.vim"
+Bundle "fatih/vim-go"
 Bundle "groenewege/vim-less.git"
 Bundle "itspriddle/vim-jquery.git"
 Bundle "jtratner/vim-flavored-markdown.git"
