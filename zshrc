@@ -48,7 +48,7 @@ plugins=(gitfast osx rvm tmuxinator)
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
