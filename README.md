@@ -28,8 +28,13 @@ Clone repository:
 * `git br` or `gb` - branch
 * `git co` - checkout
 * `git ci` - commit
+* `gfa` - fetch all and prune
 * `grbc` - rebase continue
 * `grba` - rebase abort
+
+### Vagrant
+
+* `vgst` - global status
 
 ### Secrets
 

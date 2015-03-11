@@ -17,8 +17,12 @@ alias gca='git commit --amend'
 alias gco='git checkout'
 alias gp='git push'
 alias gpl='git pull'
+alias gfa='git fetch --all --prune'
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
+
+# Vagrant
+alias vgst="vagrant global-status"
 
 
 alias edit-zshrc="vim $HOME/.zshrc"
