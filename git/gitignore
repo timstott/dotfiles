@@ -10,9 +10,8 @@ Thumbs.db
 #######################
 .idea/*
 
-# Ctags files #
+# Ctags file #
 ###############
-.tags
 tags
 
 # Rails related files #

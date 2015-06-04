@@ -76,6 +76,8 @@ def install_symlinks
   create_symlinks(Dir.glob('vimrc'))
   create_symlinks(Dir.glob('zshrc'))
   create_symlinks(Dir.glob('vim'))
+  create_symlinks(Dir.glob('ctags'))
+  create_symlinks(Dir.glob('agignore'))
 end
 
 def install_vundles
