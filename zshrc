@@ -52,21 +52,10 @@ export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
-# Virtual Box
-# export PATH=/Applications/VirtualBox.app/Contents/MacOS:$PATH
-
-# Heroku Toolbelt
-# export PATH=/usr/local/heroku/bin:$PATH
-
-# Add paths
-# export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
-
 # Aliases
 source $HOME/.dotfiles/zsh/aliases.zsh
 source $HOME/.dotfiles/zsh/env.zsh
 [[ -f "$HOME/.secrets" ]] && source "$HOME/.secrets"
 
-# Environment variables
-# [[ -f ~/.env ]] && source ~/.env ]
-
+# RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
