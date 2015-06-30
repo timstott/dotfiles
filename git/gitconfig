@@ -18,8 +18,7 @@
 
   # log
   sl = log --oneline --decorate -25
-  l = log --graph --date=short
-  gr = log --graph --decorate --date=short --format=format:'%C(bold yellow)%h%C(reset) (%ar) %C(white)%s%C(reset) %C(dim white)%an%C(reset) %C(bold red)%d%C(reset)' --all
+  l = log --graph --decorate --date=short --format=format:'%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset' --all
 [push]
   default = current
 [advice]
@@ -30,8 +29,6 @@
   editor = vim
   autocrlf = false
   excludesfile = ~/.gitignore
-[format]
-  pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [diff]
   tool = vimdiff
 [difftool]
