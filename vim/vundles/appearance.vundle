@@ -1,4 +1,3 @@
-Bundle "chrisbra/color_highlight.git"
 Bundle "skwp/vim-colors-solarized"
 Bundle "bling/vim-airline"
 Bundle "edkolev/tmuxline.vim"
