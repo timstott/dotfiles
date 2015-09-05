@@ -4,7 +4,6 @@ Malgomation of dotfiles goodness.
 
 ## Requirements
 
-* [Homebrew](http://brew.sh/) package manager for OS X
 * zsh as your login shell: `chsh -s $(which zsh)`
 
 ## Install
@@ -12,6 +11,7 @@ Malgomation of dotfiles goodness.
 Clone repository:
 
     git clone git://github.com/timstott/dotfiles.git && cd dotfiles
+    rake brew
     rake install
 
 ## ZSH

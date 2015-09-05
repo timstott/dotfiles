@@ -5,38 +5,49 @@ task default: 'install'
 
 desc "Hook dotfiles into system-standard positions."
 task :install do
-  puts "======================================================"
-  puts "Installing Dotfiles"
-  puts "======================================================"
-  puts
-
+  puts '[Operation] Installing Dotfiles'
   install_symlinks
   Rake::Task["install_vundle"].execute
   install_vundles
+  puts '[Info] Everything is awesome'
 end
 
+desc 'Updates dotfiles and Vim plugins'
 task :update do
-
   run "cd $HOME/.dotfiles"
   run "git pull --rebase --prune"
   install_symlinks
   install_vundles
+  puts '[Info] Everything is awesome'
 end
 
-desc "Runs Vundle installer"
+desc 'Runs Vundle installer'
 task :install_vundle do
-  puts "======================================================"
-  puts "Installing Vundle."
-  puts "======================================================"
-  puts
-
   vundle_path = File.join('vim','bundle', 'vundle')
   unless File.exists?(vundle_path)
+    puts '[Operation] Installing Vundle'
     run %{
       cd $HOME/.dotfiles
       git clone --branch v0.10.2 --depth 1 https://github.com/gmarik/vundle.git #{vundle_path}
     }
   end
+end
+
+desc 'Installs Homebrew and Brewfiles'
+task :brew do
+  unless run %{ which brew }.empty?
+    puts '[Operation] Installing Homebrew'
+    run %{
+      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+      brew tap Homebrew/brewdler
+    }
+  end
+
+  puts '[Operation] Installing packages'
+  run %{
+    brew brewdle
+    brew cleanup
+  }
 end
 
 private
@@ -52,9 +63,9 @@ def create_symlinks(files)
     source = "#{ENV["PWD"]}/#{f}"
     target = "#{ENV["HOME"]}/.#{file}"
 
-    puts "======================#{file}=============================="
-    puts "Source: #{source}"
-    puts "Target: #{target}"
+    puts "[Operation] Symlinking #{file}"
+    puts "[Source] #{source}"
+    puts "[Target] #{target}"
 
     if File.exists?(target) && (!File.symlink?(target) || (File.symlink?(target) && File.readlink(target) != source))
       puts "[Overwriting] #{target}...leaving original at #{target}.backup..."
@@ -62,9 +73,6 @@ def create_symlinks(files)
     end
 
     run %{ ln -nfs "#{source}" "#{target}" }
-
-    puts "=========================================================="
-    puts
   end
 end
 
@@ -81,5 +89,6 @@ def install_symlinks
 end
 
 def install_vundles
+  puts '[Operation] Installing Vim plugins'
   system "vim --noplugin -u #{ENV['HOME']}/.vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall"
 end
