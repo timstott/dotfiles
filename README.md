@@ -10,7 +10,7 @@ Malgomation of dotfiles goodness.
 
 Clone repository:
 
-    git clone git://github.com/timstott/dotfiles.git && cd dotfiles
+    git clone git@github.com:timstott/dotfiles.git .dotfiles && cd .dotfiles
     rake brew
     rake install
 

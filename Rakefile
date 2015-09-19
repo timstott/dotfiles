@@ -35,17 +35,13 @@ end
 
 desc 'Installs Homebrew and Brewfiles'
 task :brew do
-  unless run %{ which brew }.empty?
-    puts '[Operation] Installing Homebrew'
-    run %{
-      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-      brew tap Homebrew/brewdler
-    }
-  end
+  # TODO: install brew and brew bundle
+  # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  # brew tap Homebrew/bundle
 
   puts '[Operation] Installing packages'
   run %{
-    brew brewdle
+    brew bundle
     brew cleanup
   }
 end
