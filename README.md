@@ -14,6 +14,13 @@ Clone repository:
     rake brew
     rake install
 
+## Terminal
+
+Iterm2 install via HomeBrew Cask
+
+* Font: Droid Sans Mono for PowerLine in `fonts`
+* Color scheme: Solarized Dark in `iterm2`
+
 ## ZSH
 
 ### Ruby
