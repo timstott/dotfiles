@@ -9,3 +9,5 @@ brew 'emacs-mac', args: ['with-spacemacs-icon', 'with-imagemagick']
 brew 'docker-machine'
 brew 'docker-compose'
 cask 'iterm2'
+cask 'java'
+cask 'virtualbox'
