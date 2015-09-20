@@ -82,6 +82,7 @@ def install_symlinks
   create_symlinks(Dir.glob('vim'))
   create_symlinks(Dir.glob('ctags'))
   create_symlinks(Dir.glob('agignore'))
+  create_symlinks(Dir.glob('spacemacs'))
 end
 
 def install_vundles
