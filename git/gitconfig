@@ -13,7 +13,7 @@
   st = status
   br = branch
   co = checkout
-  ci = commit
+  ci = commit -v
   ft = fetch
 
   # log
