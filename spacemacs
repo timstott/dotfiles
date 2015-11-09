@@ -17,7 +17,7 @@
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
+     auto-completion
      ;; better-defaults
      emacs-lisp
      ;; git
@@ -27,7 +27,9 @@
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; syntax-checking
+     clojure
      version-control
+     osx
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -66,7 +68,8 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-dark
+   dotspacemacs-themes '(wombat
+                         solarized-dark
                          solarized-light
                          spacemacs-light
                          spacemacs-dark
@@ -156,11 +159,18 @@ before layers configuration."
   ;; User initialization goes here
   )
 
-(defun dotspacemacs/config ()
+(defun dotspacemacs/user-config ()
   "Configuration function.
 This function is called at the very end of Spacemacs initialization after
 layers configuration."
-  (setq powerline-default-separator 'arrow)
+  (setq powerline-default-separator nil)
+  ;; Put one space separation between the linenumber display and the buffer contents
+  (setq linum-format "%4d ")
+  ;; Toggle linenumber
+  (global-linum-mode)
+  ;; FIXME: fill column isn't showing
+  ;; Fill column 80
+  ;; (spacemacs/toggle-fill-column-indicator)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
