@@ -24,6 +24,9 @@ alias grhh='git reset HEAD --hard'
 # Vagrant
 alias vgst="vagrant global-status"
 
+# Docker
+alias docker-stop-all='docker stop $(docker ps -a -q)'
+alias docker-remove-all='docker rm $(docker ps -a -q)'
 
 alias edit-zshrc="vim $HOME/.zshrc"
 alias edit-aliases="vim $HOME/.dotfiles/zsh/aliases.zsh"
