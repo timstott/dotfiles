@@ -16,7 +16,7 @@ Clone repository:
 
 ## Terminal
 
-Iterm2 install via HomeBrew Cask
+iTerm2 install via HomeBrew Cask
 
 * Font: Droid Sans Mono for PowerLine in `fonts`
 * Color scheme: Solarized Dark in `iterm2`
@@ -39,6 +39,11 @@ Iterm2 install via HomeBrew Cask
 * `grbc` - rebase continue
 * `grba` - rebase abort
 
+### Docker
+
+ * `docker-stop-all-containers` - stop all running containers
+ * `docker-remove-all-containers` - remove all containers
+
 ### Vagrant
 
 * `vgst` - global status
@@ -46,6 +51,12 @@ Iterm2 install via HomeBrew Cask
 ### Secrets
 
 Create a secrets dotfile. ` touch ~/.secrets`
+
+## Tmux
+
+* Bind key `Ctrl-a` (like GNU screen)
+* Vi navigation
+* System clipboard integration
 
 ## Vim
 
@@ -82,25 +93,18 @@ ESC ``
    word or visual selection in these common wrappers
 *  `leader-#` - does #{ruby interpolation}
 
-
 ### Utility
 
 * `leader-aa` - align things (type a character/expression to align by, works 
    in visual mode or by itself)
 * `leader-w` - strip trailing whitespaces
 
-## Tmux
-
-* Set prefix to `Ctrl-a` (like GNU screen)
-* Vimization
-* System clipboard integration
-
--------------------------------------------------------------------------------
-
-## Tips & Tricks
+### Tips & Tricks
 
 * debug vim keymapping `:verbose map [keycombo]`
 * start vim without vimrc `vim -u NONE`
+
+-------------------------------------------------------------------------------
 
 ## Credits
 
