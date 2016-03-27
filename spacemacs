@@ -26,9 +26,10 @@ values."
      auto-completion
      ;; better-defaults
      emacs-lisp
+     ruby
      git
      markdown
-     ;; org
+     org
      (shell :variables
             shell-default-term-shell "/bin/zsh"
             shell-default-height 50

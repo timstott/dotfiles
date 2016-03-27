@@ -41,8 +41,8 @@ iTerm2 install via HomeBrew Cask
 
 ### Docker
 
- * `docker-stop-all-containers` - stop all running containers
- * `docker-remove-all-containers` - remove all containers
+* `docker-stop-all-containers` - stop all running containers
+* `docker-remove-all-containers` - remove all containers
 
 ### Vagrant
 
@@ -57,6 +57,10 @@ Create a secrets dotfile. ` touch ~/.secrets`
 * Bind key `Ctrl-a` (like GNU screen)
 * Vi navigation
 * System clipboard integration
+
+## Emacs
+
+Confiure with Spacemacs
 
 ## Vim
 
