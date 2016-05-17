@@ -1,19 +1,24 @@
-# OS generated files #
-######################
+# OS files #
+############
 .DS_Store
 ._*
 .Spotlight-V100
 .Trashes
 Thumbs.db
 
-# IDE generated files #
-#######################
+# IDE files #
+#############
 .idea/*
 
 # Ctags file #
 ###############
 tags
 
-# Rails related files #
+# Rails files #
+###############
 rerun.txt
 .env
+
+# Tern files #
+##############
+.tern-port

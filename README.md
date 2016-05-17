@@ -31,15 +31,17 @@ iTerm2 install via HomeBrew Cask
 
 ### Git
 
-* `git st` or `gs` - status
-* `git br` or `gb` - branch
-* `git co` - checkout
-* `git ci` - commit
+* `gco` - checkout
+* `gst` - status
+* `gb` - branch
 * `gc` - commit
-* `gcs` - commit sign
-* `gc!` - amend commit
-* `gca` - add and commit
-* `gca!` - commit add and amend
+* `gcs` - sign commit
+* `gca` - stage and commit
+* `gcas` - stage, sign and commit
+* `gc!` - amend and commit
+* `gcs!` - amend, sign and commit
+* `gca!` - stage, amend and commit
+* `gcas!` - stage, amend, sign and commit
 * `gfa` - fetch all and prune
 * `grbc` - rebase continue
 * `grba` - rebase abort

@@ -9,16 +9,6 @@
   frag = magenta bold
   old = red
   new = green
-[alias]
-  st = status
-  br = branch
-  co = checkout
-  ci = commit -v
-  ft = fetch
-
-  # log
-  sl = log --oneline --decorate -25
-  l = log --graph --decorate --date=short --format=format:'%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset' --all
 [push]
   default = current
 [advice]
