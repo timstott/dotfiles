@@ -48,14 +48,14 @@ plugins=(gitfast osx rvm tmuxinator)
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH
-
 source $ZSH/oh-my-zsh.sh
 
-# Aliases
-source $HOME/.dotfiles/zsh/aliases.zsh
-source $HOME/.dotfiles/zsh/env.zsh
-[[ -f "$HOME/.secrets" ]] && source "$HOME/.secrets"
+export PATH=$HOME/go/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH
 
-# RVM
+export EDITOR=vim
+export GOPATH=$HOME/go
+
+source $HOME/.dotfiles/zsh/aliases.zsh
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -f "$HOME/.secrets" ]] && source "$HOME/.secrets"
