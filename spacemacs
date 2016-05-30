@@ -27,10 +27,12 @@ values."
      ;; better-defaults
      emacs-lisp
      ruby
+     ruby-on-rails
      git
      markdown
      org
      (shell :variables
+            shell-default-shell 'shell
             shell-default-term-shell "/bin/zsh"
             shell-default-height 50
             shell-default-position 'bottom)
@@ -42,6 +44,7 @@ values."
      themes-megapack
      osx
      github
+     go
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -200,6 +203,7 @@ user code."
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (setq powerline-default-separator nil)
+  (spaceline-compile)
   ;; Put one space separation between the linenumber display and the buffer contents
   (setq linum-format "%4d ")
   ;; Toggle linenumber
@@ -207,6 +211,13 @@ layers configuration. You are free to put any user code."
   ;; Set JavaScript & JSON indent to 2 spaces
   (setq-default js2-basic-offset 2)
   (setq-default js-indent-level 2)
+  ;; Always follow symlinks
+  (setq vc-follow-symlinks t)
+
+  ;; Activate column indicator in prog-mode and text-mode, except for org-mode
+  (add-hook 'prog-mode-hook 'turn-on-fci-mode)
+  (add-hook 'text-mode-hook 'turn-on-fci-mode)
+  (add-hook 'org-mode-hook 'turn-off-fci-mode 'append)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
