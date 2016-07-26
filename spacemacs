@@ -218,6 +218,9 @@ layers configuration. You are free to put any user code."
   (add-hook 'prog-mode-hook 'turn-on-fci-mode)
   (add-hook 'text-mode-hook 'turn-on-fci-mode)
   (add-hook 'org-mode-hook 'turn-off-fci-mode 'append)
+
+  ;; Disable lock file creation
+  (setq create-lockfiles nil)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
