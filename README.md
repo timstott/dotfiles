@@ -1,35 +1,63 @@
-# .files :rocket:
+# The .files :rocket:
 
-Malgomation of dotfiles goodness.
+The packages and configuration necessary to make a machine feel like home.
 
-## Requirements
+## TOC
 
-* zsh as your login shell: `chsh -s $(which zsh)`
+- [Installation](#installation)
+- [Emacs](#emacs)
+- [Tmux](#tmux)
+- [ZSH ](#zsh)
+  - [Aliases](#aliases)
+  - [Secrets](#secrets)
+- [~~Vim~~ OUTDATED](#vim-outdated)
+- [Credits](#credits)
 
-## Install
+## Installation
 
-Clone repository:
+These steps expect [iTerm2 ](https://www.iterm2.com/) and [Homebrew](http://brew.sh/index.html) to be installed.
 
-    git clone git@github.com:timstott/dotfiles.git .dotfiles && cd .dotfiles
-    rake brew
-    rake install
+### Shell Setup
 
-## Terminal
+```
+git clone git@github.com:timstott/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+rake symlink
+brew tap Homebrew/bundle  # install Homebrew bundler
+brew bundle               # install packages listed in Brewfile
+chsh -s $(which zsh)      # use zsh as login shell
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+```
 
-iTerm2 install via HomeBrew Cask
+### iTerm2 Setup
 
-* Font: Droid Sans Mono for PowerLine in `fonts`
-* Color scheme: Solarized Dark in `iterm2`
+- Change font to `Droid Sans Mono for PowerLine` located in [fonts](fonts) directory
+- Change theme to `Molokai` located in [iterm2](iterm2) directory
+
+## Emacs
+
+Emacs is configured with Spacemacs (evil), see [spacemacs](spacemacs).
+
+## Tmux
+
+* Bind key `Ctrl-a` (like GNU screen)
+* Vi navigation
+* Preserve current directory on splits
 
 ## ZSH
 
-### Ruby
+### Aliases
+
+In addition to aliases defined by Oh My Zsh plugins, custom aliases are available.
+
+#### Ruby
 
 * `be` - `bundle exec`
 * `zs` - `zeus start`
 * `zc` - `zeus console`
 
-### Git
+#### Git
 
 * `gco` - checkout
 * `gst` - status
@@ -46,30 +74,21 @@ iTerm2 install via HomeBrew Cask
 * `grbc` - rebase continue
 * `grba` - rebase abort
 
-### Docker
+#### Docker
 
 * `docker-stop-all-containers` - stop all running containers
 * `docker-remove-all-containers` - remove all containers
 
-### Vagrant
+#### Vagrant
 
 * `vgst` - global status
 
 ### Secrets
 
-Create a secrets dotfile. ` touch ~/.secrets`
+Store secret environment variables in `~/.secrets`. The file, when present, is
+sourced by *zshrc*.
 
-## Tmux
-
-* Bind key `Ctrl-a` (like GNU screen)
-* Vi navigation
-* System clipboard integration
-
-## Emacs
-
-Confiure with Spacemacs
-
-## Vim
+## ~~Vim~~ OUTDATED
 
 Plugin management with [Vundle](https://github.com/gmarik/vundle)
 

@@ -3,6 +3,11 @@ require 'fileutils'
 
 task default: 'install'
 
+desc "Create symlinks in $HOME directory"
+task :symlink do
+  install_symlinks
+end
+
 desc "Hook dotfiles into system-standard positions."
 task :install do
   puts '[Operation] Installing Dotfiles'
@@ -31,19 +36,6 @@ task :install_vundle do
       git clone --branch v0.10.2 --depth 1 https://github.com/gmarik/vundle.git #{vundle_path}
     }
   end
-end
-
-desc 'Installs Homebrew and Brewfiles'
-task :brew do
-  # TODO: install brew and brew bundle
-  # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  # brew tap Homebrew/bundle
-
-  puts '[Operation] Installing packages'
-  run %{
-    brew bundle
-    brew cleanup
-  }
 end
 
 private
