@@ -42,7 +42,9 @@ values."
      auto-completion
      ;; better-defaults
      emacs-lisp
-     ruby
+     (ruby :variables
+           ruby-version-manager 'rbenv
+           ruby-test-runner 'rspec)
      ruby-on-rails
      git
      markdown
