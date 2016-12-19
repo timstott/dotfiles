@@ -326,6 +326,9 @@ layers configuration. You are free to put any user code."
 
   ;; Disable lock file creation
   (setq create-lockfiles nil)
+
+  ;; Workaround command line emacs error: Removing old name: Mac error -1700
+  (setq mac-system-move-file-to-trash-use-finder nil)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
