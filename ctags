@@ -1,1 +1,2 @@
 --exclude=.git
+--exclude=node_modules
