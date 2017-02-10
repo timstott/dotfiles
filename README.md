@@ -15,18 +15,9 @@ The packages and configuration necessary to make a machine feel like home.
 
 ## Installation
 
-These steps expect [iTerm2 ](https://www.iterm2.com/) and [Homebrew](http://brew.sh/index.html) to be installed.
-
-### Shell Setup
-
 ```
-git clone git@github.com:timstott/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-rake symlink
-brew tap Homebrew/bundle  # install Homebrew bundler
-brew bundle               # install packages listed in Brewfile
-chsh -s $(which zsh)      # use zsh as login shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+bash < <(curl -s https://raw.github.com/timstott/dotfiles/master/mac)
+
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 ```
 

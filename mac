@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Install CLI tooling
+# Inspiration https://github.com/andycroll/macsetup/blob/master/mac
+
+echo "[Install] Homebrew"
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew update
+
+echo "[Install] Git"
+  brew install git
+
+echo "[Install] Ag"
+  brew install ag
+
+echo "[Install] tmux"
+  brew install tmux
+
+echo "[Install] Ctags"
+  brew install ctags
+
+echo "[Install] neovim"
+  brew tap neovim/neovim
+  brew install neovim
