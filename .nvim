@@ -1,0 +1,43 @@
+set nocompatible
+
+""" Basics
+set number                      " Line numbers are good
+set history=1000                " Store lots of :cmdline history
+
+let mapleader="\<SPACE>"        " Change leader key to SPACE
+
+""" Code
+" Display trailing spaces
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+endif
+set list                        " Show problematic characters
+set colorcolumn=80              " Display 80th column
+set nowrap                      " Don't wrap lines
+
+set shiftwidth=2                " Indentation amount for < and > commands
+set tabstop=2                   " Render TABs using this many spaces.
+
+""" Status line
+set showcmd                     " Show incomplete commands
+set showmatch                   " Show matching brackets
+set showmode                    " Show current mode
+set ruler                       " Show the line and column numbers of the cursor
+
+""" Search
+set incsearch                   " Find the next match as we type the search
+set hlsearch                    " Highlight searches by default
+set ignorecase                  " Ignore case when searching...
+set smartcase                   " ...unless we type a capital
+
+""" Scroll
+set splitbelow                  " Horizontal split below current
+set splitright                  " Vertical split to right of current
+
+if !&scrolloff
+  set scrolloff=3               " Show next 3 lines while scrolling
+endif
+
+if !&sidescrolloff
+  set sidescrolloff=5           " Show next 5 columns while side-scrolling
+endif
