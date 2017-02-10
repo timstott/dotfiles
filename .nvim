@@ -1,22 +1,26 @@
 set nocompatible
 
+call plug#begin('~/.config/nvim/plugged')
+Plug 'ctrlpvim/ctrlp.vim'       " Fuzzy finder
+call plug#end()
+
 """ Basics
 set number                      " Line numbers are good
 set history=1000                " Store lots of :cmdline history
 
 let mapleader="\<SPACE>"        " Change leader key to SPACE
 
-""" Code
+""" Appearance
+set colorcolumn=80              " Display 80th column
+set nowrap                      " Don't wrap lines
+set shiftwidth=2                " Indentation amount for < and > commands
+set tabstop=2                   " Render TABs using this many spaces.
+
 " Display trailing spaces
 if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 endif
 set list                        " Show problematic characters
-set colorcolumn=80              " Display 80th column
-set nowrap                      " Don't wrap lines
-
-set shiftwidth=2                " Indentation amount for < and > commands
-set tabstop=2                   " Render TABs using this many spaces.
 
 """ Status line
 set showcmd                     " Show incomplete commands
@@ -41,3 +45,12 @@ endif
 if !&sidescrolloff
   set sidescrolloff=5           " Show next 5 columns while side-scrolling
 endif
+
+""" Plugins
+" Use ag in to find files (respects .gitignore)
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_user_command = 'ag %s -l -g "" --hidden'
+" Open file in new pane instead of switching to existing pane
+let g:ctrlp_switch_buffer = 'et'
+let g:ctrlp_extensions = ['tag']
+let g:ctrlp_types = ['fil', 'buf', 'tag']
