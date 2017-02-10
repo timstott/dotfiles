@@ -57,5 +57,5 @@ export GOPATH=$HOME/go
 
 source $HOME/.dotfiles/zsh/aliases.zsh
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.rbenv" ]] && eval "$(rbenv init -)"
 [[ -f "$HOME/.secrets" ]] && source "$HOME/.secrets"
