@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+
+PATH="/usr/local/bin:$PATH"
+
+git ls-files | ctags --tag-relative -L - --languages=-javascript,sql

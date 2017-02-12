@@ -7,6 +7,7 @@ The packages and configuration necessary to make a machine feel like home.
 - [Installation](#installation)
 - [Emacs](#emacs)
 - [Tmux](#tmux)
+- [Git](#git)
 - [ZSH ](#zsh)
   - [Aliases](#aliases)
   - [Secrets](#secrets)
@@ -35,6 +36,14 @@ Emacs is configured with Spacemacs (evil), see [spacemacs](spacemacs).
 * Bind key `Ctrl-a` (like GNU screen)
 * Vi navigation
 * Preserve current directory on splits
+
+## Git
+
+* Place user config in *~/.gitconfig.user*
+* Git hook to re-index ctags post-checkout
+* Manually re-index ctags `git ctags`
+
+TIP: Use `git init` in existing repos to copy the hooks
 
 ## ZSH
 
