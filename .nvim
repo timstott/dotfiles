@@ -1,20 +1,24 @@
 set nocompatible
 
 call plug#begin('~/.config/nvim/plugged')
+Plug 'tomasr/molokai'           " Color scheme
 Plug 'ctrlpvim/ctrlp.vim'       " Fuzzy finder
 call plug#end()
 
 """ Basics
 set number                      " Line numbers are good
 set history=1000                " Store lots of :cmdline history
+set clipboard+=unnamedplus      " Add system clipboard
 
 let mapleader="\<SPACE>"        " Change leader key to SPACE
 
 """ Appearance
+colorscheme molokai
 set colorcolumn=80              " Display 80th column
 set nowrap                      " Don't wrap lines
 set shiftwidth=2                " Indentation amount for < and > commands
-set tabstop=2                   " Render TABs using this many spaces.
+set tabstop=2                   " Render TABs using this many spaces
+set expandtab                   " Insert spaces when TAB is pressed
 
 " Display trailing spaces
 if &listchars ==# 'eol:$'
@@ -45,6 +49,10 @@ endif
 if !&sidescrolloff
   set sidescrolloff=5           " Show next 5 columns while side-scrolling
 endif
+
+""" Completion
+set wildmenu                    " Enable cmd menu
+set wildmode=list:longest,full  " Display cmd completion in list
 
 """ Plugins
 " Use ag in to find files (respects .gitignore)
