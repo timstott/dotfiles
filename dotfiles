@@ -5,6 +5,8 @@ echo "[Symlink] nvim"
   ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim/init.vim
 
 echo "[Symlink] git"
-  ln -s $HOME/.dotfiles/git_template $HOME/.git_template
+  if [ ! -L $HOME/.git_template ]; then
+    ln -s $HOME/.dotfiles/git_template $HOME/.git_template
+  fi
   ln -s $HOME/.dotfiles/gitconfig $HOME/.gitconfig
   ln -s $HOME/.dotfiles/gitignore $HOME/.gitignore
