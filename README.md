@@ -5,6 +5,7 @@ The packages and configuration necessary to make a machine feel like home.
 ## TOC
 
 - [Installation](#installation)
+- [nvim](nvim)
 - [Emacs](#emacs)
 - [Tmux](#tmux)
 - [Git](#git)
@@ -17,8 +18,16 @@ The packages and configuration necessary to make a machine feel like home.
 ## Installation
 
 ```
-bash < <(curl -s https://raw.github.com/timstott/dotfiles/master/mac)
+git clone git@github.com:timstott/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
 
+# Install CLI tools
+./mac
+
+# Symlink dotfiles
+./dotfiles
+
+# Optional
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 ```
 
@@ -26,6 +35,13 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 - Change font to `Droid Sans Mono for PowerLine` located in [fonts](fonts) directory
 - Change theme to `Molokai` located in [iterm2](iterm2) directory
+
+## nvim
+
+Mnemonic key bindings inspired by Spacemacs
+
+* `<SPACE>`- MapLeader
+* `<leader>pa` - open alternate file
 
 ## Emacs
 

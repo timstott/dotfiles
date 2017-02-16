@@ -62,3 +62,16 @@ let g:ctrlp_user_command = 'ag %s -l -g "" --hidden'
 let g:ctrlp_switch_buffer = 'et'
 let g:ctrlp_extensions = ['tag']
 let g:ctrlp_types = ['fil', 'buf', 'tag']
+
+
+" Find alternate file with alt
+function! Alt(path)
+  let l:alternate = system("alt " . a:path)
+  if empty(l:alternate)
+    echo "No alternate file for " . a:path . " exists!"
+  else
+    exec ":e" . " " . l:alternate
+  endif
+endfunction
+
+nnoremap <leader>pa :call Alt(expand("%"))<cr>

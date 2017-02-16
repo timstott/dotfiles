@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Install CLI tooling
+# Install CLI tools
 # Inspiration https://github.com/andycroll/macsetup/blob/master/mac
 
 echo "[Install] Homebrew"
@@ -26,3 +26,7 @@ echo "[Install] neovim"
 echo "[Install] vim-plug"
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+echo "[Install] alt"
+  brew tap "uptech/homebrew-oss"
+  brew install uptech/oss/alt

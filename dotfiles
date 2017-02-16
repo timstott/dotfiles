@@ -2,7 +2,7 @@
 
 echo "[Symlink] nvim"
   mkdir -p $HOME/.config/nvim
-  ln -s $HOME/.dotfiles/.nvim $HOME/.config/nvim/init.vim
+  ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim/init.vim
 
 echo "[Symlink] git"
   ln -s $HOME/.dotfiles/git_template $HOME/.git_template
