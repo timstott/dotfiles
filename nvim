@@ -3,6 +3,9 @@ set nocompatible
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tomasr/molokai'           " Color scheme
 Plug 'ctrlpvim/ctrlp.vim'       " Fuzzy finder
+Plug 'tpope/vim-fugitive'       " Git wrapper
+Plug 'pangloss/vim-javascript'  " JavaScript syntax
+Plug 'elixir-lang/vim-elixir'   " Elixir synatx
 call plug#end()
 
 """ Basics
