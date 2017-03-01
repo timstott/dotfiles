@@ -6,6 +6,8 @@ Plug 'ctrlpvim/ctrlp.vim'       " Fuzzy finder
 Plug 'tpope/vim-fugitive'       " Git wrapper
 Plug 'pangloss/vim-javascript'  " JavaScript syntax
 Plug 'elixir-lang/vim-elixir'   " Elixir synatx
+Plug 'tpope/vim-surround'       " Surround pairs
+Plug 'tomtom/tcomment_vim'      " Comment
 call plug#end()
 
 """ Basics
