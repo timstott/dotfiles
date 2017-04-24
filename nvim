@@ -43,6 +43,14 @@ set hlsearch                    " Highlight searches by default
 set ignorecase                  " Ignore case when searching...
 set smartcase                   " ...unless we type a capital
 
+" Use ag instead of grep
+set grepprg=ag\ --nogroup\ --nocolor\ --column
+set grepformat=%f:%l:%c%m
+
+" Custom search
+" Suppress grep output and show results in quickfix window
+command! -nargs=+ -complete=file Ag execute 'silent grep! <args>' | copen | redraw!
+
 """ Scroll
 set splitbelow                  " Horizontal split below current
 set splitright                  " Vertical split to right of current
@@ -80,3 +88,5 @@ function! Alt(path)
 endfunction
 
 nnoremap <leader>pa :call Alt(expand("%"))<cr>
+
+nnoremap <leader>ps :Ag ""<left>
