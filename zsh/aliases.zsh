@@ -38,3 +38,6 @@ alias docker-remove-all-containers='docker rm $(docker ps -a -q)'
 alias edit-zshrc="vim $HOME/.zshrc"
 alias edit-aliases="vim $HOME/.dotfiles/zsh/aliases.zsh"
 alias reload-shell="source $HOME/.zshrc"
+
+# Ruby
+alias rum='git diff origin/master --diff-filter=AMR --name-only | ag "\.rb" | xargs bundle exec rubocop'

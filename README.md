@@ -72,6 +72,7 @@ In addition to aliases defined by Oh My Zsh plugins, custom aliases are availabl
 * `be` - `bundle exec`
 * `zs` - `zeus start`
 * `zc` - `zeus console`
+* `rum` - run rubocop with files added or modified since origin/master
 
 #### Git
 
