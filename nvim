@@ -37,6 +37,13 @@ set showmatch                   " Show matching brackets
 set showmode                    " Show current mode
 set ruler                       " Show the line and column numbers of the cursor
 
+""" netrw
+let g:netrw_browse_split = 4    " Open file in previous window
+let g:netrw_preview = 1         " Preview file in vertical window
+let g:netrw_alto = 0
+let g:netrw_liststyle = 3       " Tree style listing
+let g:netrw_winsize = 20        " Window size %
+
 """ Search
 set incsearch                   " Find the next match as we type the search
 set hlsearch                    " Highlight searches by default
