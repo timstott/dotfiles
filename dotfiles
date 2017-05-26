@@ -25,3 +25,8 @@ do
   echo "[Symlink] $file"
   ln -s $HOME/.dotfiles/$file $HOME/.$file
 done
+
+echo "[Symlink] gnupg"
+  mkdir -p $HOME/.gnupg
+  ln -s $HOME/.dotfiles/gpg.conf $HOME/.gnupg/gpg.conf
+  ln -s $HOME/.dotfiles/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf

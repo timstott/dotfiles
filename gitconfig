@@ -1,3 +1,7 @@
+[user]
+  name = Timothy Stott
+  email = stott.timothy@gmail.com
+  signingkey = 0x0CDE05FC2683594F
 [color]
   ui = true
 [color "branch"]
