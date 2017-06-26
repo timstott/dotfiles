@@ -76,6 +76,7 @@ set wildmode=list:longest,full  " Display cmd completion in list
 
 """ Plugins
 " Use ag in to find files (respects .gitignore)
+let g:ctrlp_use_caching = 0
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_user_command = 'ag %s -l -g "" --hidden'
 " Open file in new pane instead of switching to existing pane
