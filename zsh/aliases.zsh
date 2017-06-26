@@ -35,6 +35,8 @@ alias vgst="vagrant global-status"
 alias docker-stop-all-containers='docker stop $(docker ps -a -q)'
 alias docker-remove-all-containers='docker rm $(docker ps -a -q)'
 
+# Utils
+alias vim=nvim
 alias edit-zshrc="vim $HOME/.zshrc"
 alias edit-aliases="vim $HOME/.dotfiles/zsh/aliases.zsh"
 alias reload-shell="source $HOME/.zshrc"

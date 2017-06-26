@@ -20,7 +20,7 @@
 [include]
   path = .gitconfig.user
 [core]
-  editor = vim
+  editor = nvim
   autocrlf = false
   excludesfile = ~/.gitignore
 [diff]
