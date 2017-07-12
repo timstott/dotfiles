@@ -26,10 +26,7 @@ set tabstop=2                   " Render TABs using this many spaces
 set expandtab                   " Insert spaces when TAB is pressed
 
 " Display trailing spaces
-if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-endif
-set list                        " Show problematic characters
+set list listchars=tab:>\ ,trail:·,eol:¬,extends:…,precedes:…
 
 """ Status line
 set showcmd                     " Show incomplete commands
