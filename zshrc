@@ -54,7 +54,7 @@ plugins=(gpg-agent gitfast osx rvm tmuxinator)
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$HOME/go/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=$HOME/.dotfiles/bin:$HOME/go/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH
 
 export EDITOR=nvim
 export GOPATH=$HOME/go

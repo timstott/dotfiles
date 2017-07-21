@@ -35,11 +35,17 @@ alias vgst="vagrant global-status"
 alias docker-stop-all-containers='docker stop $(docker ps -a -q)'
 alias docker-remove-all-containers='docker rm $(docker ps -a -q)'
 
+# Node
+# Use npm-exec to local binaries
+function npm-exec {
+  $(npm bin)/$@
+}
+
+# macOS X
+alias lock='pmset displaysleepnow'
+
 # Utils
 alias vim=nvim
 alias edit-zshrc="vim $HOME/.zshrc"
 alias edit-aliases="vim $HOME/.dotfiles/zsh/aliases.zsh"
 alias reload-shell="source $HOME/.zshrc"
-
-# Ruby
-alias rum='git diff origin/master --diff-filter=AMR --name-only | ag "\.rb" | xargs bundle exec rubocop'

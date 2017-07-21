@@ -1,0 +1,16 @@
+#! /bin/zsh
+
+set -e
+
+# Lint files added/modified/renamed on branch
+ALTERED_FILES=$(git --no-pager diff origin/master --diff-filter=AMR --name-only)
+
+if [ -f .rubocop.yml ];
+then
+  echo $ALTERED_FILES | ag "\.rb"|  xargs bundle exec rubocop
+fi
+
+if [ -f .eslintrc ];
+then
+  echo $ALTERED_FILES | ag "\.js"| xargs $(npm bin)/eslint
+fi
