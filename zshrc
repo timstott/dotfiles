@@ -48,7 +48,7 @@ export UPDATE_ZSH_DAYS=13
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gpg-agent gitfast osx rvm tmuxinator)
+plugins=(gitfast osx rvm tmuxinator)
 
 # User configuration
 
