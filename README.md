@@ -43,6 +43,8 @@ Mnemonic key bindings inspired by Spacemacs
 * `<SPACE>`- MapLeader
 * `<leader>pa` - open alternate file
 * `<leader>ps` - project search
+* `<leader>pf` - find file
+* `<leader>bb` - find opened buffers
 
 ## Emacs
 

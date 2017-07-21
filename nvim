@@ -2,12 +2,13 @@ set nocompatible
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tomasr/molokai'           " Color scheme
-Plug 'ctrlpvim/ctrlp.vim'       " Fuzzy finder
 Plug 'tpope/vim-fugitive'       " Git wrapper
 Plug 'pangloss/vim-javascript'  " JavaScript syntax
 Plug 'elixir-lang/vim-elixir'   " Elixir synatx
 Plug 'tpope/vim-surround'       " Surround pairs
 Plug 'tomtom/tcomment_vim'      " Comment
+Plug 'junegunn/fzf'             " Fuzzy finder
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 """ Basics
@@ -72,15 +73,6 @@ set wildmenu                    " Enable cmd menu
 set wildmode=list:longest,full  " Display cmd completion in list
 
 """ Plugins
-" Use ag in to find files (respects .gitignore)
-let g:ctrlp_use_caching = 0
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_user_command = 'ag %s -l -g "" --hidden'
-" Open file in new pane instead of switching to existing pane
-let g:ctrlp_switch_buffer = 'et'
-let g:ctrlp_extensions = ['tag']
-let g:ctrlp_types = ['fil', 'buf', 'tag']
-
 
 " Find alternate file with alt
 function! Alt(path)
@@ -95,3 +87,7 @@ endfunction
 nnoremap <leader>pa :call Alt(expand("%"))<cr>
 
 nnoremap <leader>ps :Ag ""<left>
+
+nnoremap <c-p> :FZF<cr>
+nnoremap <leader>pf :FZF<cr>
+nnoremap <leader>bb :Buffers<cr>

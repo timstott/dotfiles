@@ -59,6 +59,9 @@ export PATH=$HOME/.dotfiles/bin:$HOME/go/bin:$HOME/bin:/usr/local/sbin:/usr/loca
 export EDITOR=nvim
 export GOPATH=$HOME/go
 
+# Setting ag as the default source for fzf to respect .gitignore, .agignore
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+
 source $HOME/.dotfiles/zsh/aliases.zsh
 
 [[ -s "$HOME/.rbenv" ]] && eval "$(rbenv init -)"

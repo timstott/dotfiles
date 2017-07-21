@@ -38,3 +38,10 @@ echo "[Install] alt"
 echo "[Install] emacs"
   brew tap "railwaycat/emacsmacport"
   brew 'emacs-mac', args: ['with-spacemacs-icon', 'with-imagemagick']
+
+# Ruby version manager
+echo "[Install] rbenv"
+  brew install rbenv
+
+echo "[Install] fzf"
+  brew install fzf
