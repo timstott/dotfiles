@@ -43,5 +43,11 @@ echo "[Install] emacs"
 echo "[Install] rbenv"
   brew install rbenv
 
+echo "[Install] nvm"
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | zsh
+
+echo "[Install] yarn"
+  curl -o- -L https://yarnpkg.com/install.sh | zsh
+
 echo "[Install] fzf"
   brew install fzf

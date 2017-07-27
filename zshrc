@@ -66,3 +66,9 @@ source $HOME/.dotfiles/zsh/aliases.zsh
 
 [[ -s "$HOME/.rbenv" ]] && eval "$(rbenv init -)"
 [[ -f "$HOME/.secrets" ]] && source "$HOME/.secrets"
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh" --no-use
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
