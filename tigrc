@@ -1,2 +1,8 @@
 # Use default tig 2.0.3 main-view but display commit id/sha
 set main-view = line-number:no,interval=5 id:yes date:default author:full commit-title:yes,graph,refs,overflow=no
+
+# Copy current commit sha to clipboard
+bind generic x !@sh -c "echo %(commit) | pbcopy"
+
+# Fixup selected commit
+bind generic + !git commit --fixup %(commit) --verbose
