@@ -9,6 +9,7 @@ Thumbs.db
 # IDE files #
 #############
 .idea/*
+.vscode
 
 # Ctags file #
 ###############
@@ -22,3 +23,5 @@ rerun.txt
 # Tern files #
 ##############
 .tern-port
+
+npm-debug.log
