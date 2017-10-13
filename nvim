@@ -1,12 +1,11 @@
 set nocompatible
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'tomasr/molokai'           " Color scheme
+Plug 'trevordmiller/nova-vim'   " Color scheme
 
 " Syntax
 Plug 'elixir-lang/vim-elixir'   " Elixir synatx
 Plug 'pangloss/vim-javascript'  " JavaScript syntax
-Plug 'slim-template/vim-slim'   " Slim syntax
 Plug 'mxw/vim-jsx'              " React syntax
 Plug 'slim-template/vim-slim'   " Slim syntax
 Plug 'hashivim/vim-terraform'   " Terraform syntax
@@ -28,8 +27,9 @@ set clipboard+=unnamedplus      " Add system clipboard
 let mapleader="\<SPACE>"        " Change leader key to SPACE
 
 """ Appearance
-colorscheme molokai
+colorscheme nova
 set colorcolumn=80              " Display 80th column
+highlight ColorColumn ctermbg=darkred guibg=darkred
 set nowrap                      " Don't wrap lines
 set shiftwidth=2                " Indentation amount for < and > commands
 set tabstop=2                   " Render TABs using this many spaces
@@ -110,3 +110,5 @@ nnoremap <leader>ps :Ag ""<left>
 nnoremap <c-p> :FZF<cr>
 nnoremap <leader>pf :FZF<cr>
 nnoremap <leader>bb :Buffers<cr>
+nnoremap <silent> vv <C-w>v
+nnoremap <silent> ss <C-w>s

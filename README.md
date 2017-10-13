@@ -34,7 +34,7 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 ### iTerm2 Setup
 
 - Change font to `Droid Sans Mono for PowerLine` located in [fonts](fonts) directory
-- Change theme to `Molokai` located in [iterm2](iterm2) directory
+- Change theme to `Nova` located in [iterm2](iterm2) directory
 
 ## nvim
 
