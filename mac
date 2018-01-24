@@ -1,53 +1,80 @@
 #!/usr/bin/env bash
 
-# Install CLI tools
-# Inspiration https://github.com/andycroll/macsetup/blob/master/mac
+set -e
 
-echo "[Install] Homebrew"
+echo "Homebrew - package manager"
+if ! which brew > /dev/null 2>&1; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  brew update
+fi
 
-echo "[Install] Git"
-  brew install git
+# $1 - brew package name (e.g. "neovim")
+# $2 - command name (e.g. "nvim")
+#
+# when $2 is blank uses $1
+function install_or_update {
+  CMD="$2"
+  if [ -z "$CMD" ]; then
+    CMD="$1"
+  fi
 
-echo "[Install] Ag"
-  brew install ag
+  # Check is package is installed
+  if which $CMD > /dev/null 2>&1; then
+    # Check is package is outdated
+    if (brew outdated | grep -q package_name ); then
+      brew upgrade $1
+    fi
+  else
+    brew install $1
+  fi
+}
 
-echo "[Install] tmux"
-  brew install tmux
+echo "git - version control"
+install_or_update "git"
+
+echo "ag - code search"
+install_or_update "ag"
+
+echo "tmux - terminal multiplexer"
+install_or_update "tmux"
 
 # Use OS X clipboard inside tmux
-echo "[Install] reattach-to-user-namespace"
-  brew install reattach-to-user-namespace
+echo "reattach-to-user-namespace"
+install_or_update "reattach-to-user-namespace"
 
-echo "[Install] Ctags"
-  brew install ctags
+echo "ctags"
+install_or_update "ctags"
 
-echo "[Install] neovim"
-  brew tap neovim/neovim
-  brew install neovim
+echo "neovim - editor"
+brew tap neovim/neovim
+install_or_update "neovim" "nvim"
 
-echo "[Install] vim-plug"
-  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo "vim-plug - vim package manager"
+if [ ! -f $HOME/.local/share/nvim/site/autoload/plug.vim ]; then
+  curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
 
-echo "[Install] alt"
-  brew tap "uptech/homebrew-oss"
-  brew install uptech/oss/alt
+echo "alt - alternate file finder"
+brew tap "uptech/homebrew-oss"
+install_or_update "uptech/oss/alt" "alt"
 
-echo "[Install] emacs"
-  brew tap "railwaycat/emacsmacport"
-  brew 'emacs-mac', args: ['with-spacemacs-icon', 'with-imagemagick']
+echo "emacs - no comment"
+brew tap "railwaycat/emacsmacport"
+install_or_update "'emacs-mac', args: ['with-spacemacs-icon', 'with-imagemagick']" "emacs"
 
 # Ruby version manager
-echo "[Install] rbenv"
-  brew install rbenv
+echo "rbenv - ruby version manager"
+install_or_update "rbenv"
 
-echo "[Install] nvm"
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | zsh
+echo "nvm - node version manager"
+mkdir -p $HOME/.nvm
+install_or_update "nvm"
 
-echo "[Install] yarn"
-  curl -o- -L https://yarnpkg.com/install.sh | zsh
+echo "yarn - node package manager"
+install_or_update "yarn"
 
-echo "[Install] fzf"
-  brew install fzf
+echo "fzf - fuzzy finder"
+install_or_update "fzf"
+
+echo "tldr - man pages with example"
+install_or_update "tldr"
