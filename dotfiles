@@ -1,8 +1,12 @@
 #!/bin/sh
 
-echo "[Symlink] nvim"
-  mkdir -p $HOME/.config/nvim
-  ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim/init.vim
+echo "nvim"
+stow -v 2 neovim
+
+echo "pryrc"
+stow -v 2 pry
+stow -v 2 awesomeprint
+stow -v 2 gem
 
 echo "[Symlink] git"
   if [ ! -L $HOME/.git_template ]; then
