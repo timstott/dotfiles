@@ -14,6 +14,7 @@ Plug 'hashivim/vim-terraform'   " Terraform syntax
 Plug 'tpope/vim-fugitive'       " Git wrapper
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'       " Surround pairs
+Plug 'scrooloose/nerdtree'      " You know it
 Plug 'tomtom/tcomment_vim'      " Comment
 Plug 'junegunn/fzf'             " Fuzzy finder
 Plug 'junegunn/fzf.vim'
@@ -48,9 +49,10 @@ set ruler                       " Show the line and column numbers of the cursor
 
 """ netrw
 let g:netrw_banner = 0
-let g:netrw_liststyle = 3
+let g:netrw_liststyle = 0       " thin listing (one file per line)
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
+let g:netrw_winsize = 25
 
 """ Search
 set incsearch                   " Find the next match as we type the search
@@ -109,6 +111,8 @@ nnoremap <leader>ps :Ag ""<left>
 
 nnoremap <c-p> :FZF<cr>
 nnoremap <leader>pf :FZF<cr>
+nnoremap <leader>pt :NERDTreeToggle<cr>
+nnoremap <leader>pl :NERDTreeFind<cr>
 nnoremap <leader>bb :Buffers<cr>
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s

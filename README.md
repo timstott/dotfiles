@@ -44,6 +44,8 @@ Mnemonic key bindings inspired by Spacemacs
 * `<leader>pa` - open alternate file
 * `<leader>ps` - project search
 * `<leader>pf` - find file
+* `<leader>pt` - open project tree
+* `<leader>pl` - open project tree at current buffer location
 * `<leader>bb` - find opened buffers
 
 ## Emacs
@@ -90,7 +92,7 @@ In addition to aliases defined by Oh My Zsh plugins, custom aliases are availabl
 * `gcs!` - amend, sign and commit
 * `gca!` - stage, amend and commit
 * `gcas!` - stage, amend, sign and commit
-* `gfa` - fetch all and prune
+* `gfa` - fetch all
 * `grbc` - rebase continue
 * `grba` - rebase abort
 

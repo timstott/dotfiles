@@ -24,7 +24,7 @@ alias gb='git branch'
 alias gst='git status'
 alias gco='git checkout'
 alias gpl='git pull'
-alias gfa='git fetch --all --prune'
+alias gfa='git fetch --all'
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
 
