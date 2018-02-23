@@ -81,3 +81,13 @@ install_or_update "fzf"
 
 echo "tldr - man pages with example"
 install_or_update "tldr"
+
+echo "golang"
+mkdir -p $HOME/go
+install_or_update "go"
+
+echo "jq - json processor"
+install_or_update "jq"
+
+echo "sed"
+# install_or_update "
