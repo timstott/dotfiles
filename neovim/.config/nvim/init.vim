@@ -29,14 +29,16 @@ let mapleader="\<SPACE>"        " Change leader key to SPACE
 
 """ Appearance
 colorscheme nova
-set colorcolumn=80              " Display 80th column
-highlight ColorColumn ctermbg=darkred guibg=darkred
+set colorcolumn=81              " Display 81th column
 set nowrap                      " Don't wrap lines
 set shiftwidth=2                " Indentation amount for < and > commands
 set tabstop=2                   " Render TABs using this many spaces
 set expandtab                   " Insert spaces when TAB is pressed
 set foldmethod=indent           " syntax base folds
 set foldlevelstart=8            " new buffer foldlevel
+
+highlight ColorColumn ctermbg=darkred guibg=darkred
+highlight IncSearch guibg=green ctermbg=green term=underline
 
 " Display trailing spaces
 set list listchars=tab:>\ ,trail:·,eol:¬,extends:…,precedes:…
