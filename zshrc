@@ -63,6 +63,7 @@ export GOPATH=$HOME/go
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 
 source $HOME/.dotfiles/zsh/aliases.zsh
+source $HOME/.dotfiles/zsh/history.zsh
 
 [[ -s "$HOME/.rbenv" ]] && eval "$(rbenv init -)"
 [[ -f "$HOME/.secrets" ]] && source "$HOME/.secrets"
