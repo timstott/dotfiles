@@ -2,9 +2,18 @@ set nocompatible
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tomasr/molokai'           " Color scheme
-Plug 'tpope/vim-fugitive'       " Git wrapper
-Plug 'pangloss/vim-javascript'  " JavaScript syntax
+
+" Syntax
 Plug 'elixir-lang/vim-elixir'   " Elixir synatx
+Plug 'pangloss/vim-javascript'  " JavaScript syntax
+Plug 'slim-template/vim-slim'   " Slim syntax
+Plug 'mxw/vim-jsx'              " React syntax
+Plug 'slim-template/vim-slim'   " Slim syntax
+Plug 'hashivim/vim-terraform'   " Terraform syntax
+
+" Utils
+Plug 'tpope/vim-fugitive'       " Git wrapper
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'       " Surround pairs
 Plug 'tomtom/tcomment_vim'      " Comment
 Plug 'junegunn/fzf'             " Fuzzy finder
@@ -25,6 +34,8 @@ set nowrap                      " Don't wrap lines
 set shiftwidth=2                " Indentation amount for < and > commands
 set tabstop=2                   " Render TABs using this many spaces
 set expandtab                   " Insert spaces when TAB is pressed
+set foldmethod=indent           " syntax base folds
+set foldlevelstart=8            " new buffer foldlevel
 
 " Display trailing spaces
 set list listchars=tab:>\ ,trail:·,eol:¬,extends:…,precedes:…
@@ -36,11 +47,10 @@ set showmode                    " Show current mode
 set ruler                       " Show the line and column numbers of the cursor
 
 """ netrw
-let g:netrw_browse_split = 4    " Open file in previous window
-let g:netrw_preview = 1         " Preview file in vertical window
-let g:netrw_alto = 0
-let g:netrw_liststyle = 3       " Tree style listing
-let g:netrw_winsize = 20        " Window size %
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
 
 """ Search
 set incsearch                   " Find the next match as we type the search
@@ -72,6 +82,10 @@ endif
 set wildmenu                    " Enable cmd menu
 set wildmode=list:longest,full  " Display cmd completion in list
 
+
+" Enable enable spell check and width line breaks with Markdwon files
+autocmd BufRead,BufNewFile *.md setlocal spell textwidth=79
+
 """ Plugins
 
 " Find alternate file with alt
@@ -84,8 +98,13 @@ function! Alt(path)
   endif
 endfunction
 
-nnoremap <leader>pa :call Alt(expand("%"))<cr>
+" JSX syntax highlighting with .js files
+let g:jsx_ext_required = 0
 
+" Enable fzf history feature
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+nnoremap <leader>pa :call Alt(expand("%"))<cr>
 nnoremap <leader>ps :Ag ""<left>
 
 nnoremap <c-p> :FZF<cr>
