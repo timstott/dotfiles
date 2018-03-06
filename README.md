@@ -76,6 +76,11 @@ TIP: Use `git init` in existing repos to copy the hooks
 
 In addition to aliases defined by Oh My Zsh plugins, custom aliases are available.
 
+#### Utilities
+
+* `fh` - search zsh history with fzf
+* `clip-json` - prettify JSON clipboard content
+
 #### Ruby
 
 * `be` - `bundle exec`

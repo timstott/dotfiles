@@ -49,3 +49,9 @@ alias vim=nvim
 alias edit-zshrc="vim $HOME/.zshrc"
 alias edit-aliases="vim $HOME/.dotfiles/zsh/aliases.zsh"
 alias reload-shell="source $HOME/.zshrc"
+alias clip-json="clippaste | jq . -S | tee /dev/tty | clipcopy"
+
+# fzf history
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
