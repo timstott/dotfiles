@@ -43,10 +43,14 @@ Mnemonic key bindings inspired by Spacemacs
 * `<SPACE>`- MapLeader
 * `<leader>pa` - open alternate file
 * `<leader>ps` - project search
+* `<leader>pS` - search project with word under cursor
 * `<leader>pf` - find file
 * `<leader>pt` - open project tree
 * `<leader>pl` - open project tree at current buffer location
 * `<leader>bb` - find opened buffers
+
+* `vv` - vertical split
+* `ss` - horizontal split
 
 ## Emacs
 

@@ -110,11 +110,18 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 nnoremap <leader>pa :call Alt(expand("%"))<cr>
 nnoremap <leader>ps :Ag ""<left>
+nnoremap <leader>pS :Ag "\b<c-r><c-w>\b"<cr>:cw<cr>
 
 nnoremap <c-p> :FZF<cr>
 nnoremap <leader>pf :FZF<cr>
 nnoremap <leader>pt :NERDTreeToggle<cr>
 nnoremap <leader>pl :NERDTreeFind<cr>
 nnoremap <leader>bb :Buffers<cr>
-nnoremap <silent> vv <C-w>v
-nnoremap <silent> ss <C-w>s
+nnoremap <silent>vv <c-w>v
+nnoremap <silent>ss <c-w>s
+
+" Quicker window movement
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
