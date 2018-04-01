@@ -49,13 +49,6 @@ set showmatch                   " Show matching brackets
 set showmode                    " Show current mode
 set ruler                       " Show the line and column numbers of the cursor
 
-""" netrw
-let g:netrw_banner = 0
-let g:netrw_liststyle = 0       " thin listing (one file per line)
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-
 """ Search
 set incsearch                   " Find the next match as we type the search
 set hlsearch                    " Highlight searches by default
@@ -85,7 +78,6 @@ endif
 """ Completion
 set wildmenu                    " Enable cmd menu
 set wildmode=list:longest,full  " Display cmd completion in list
-
 
 " Enable enable spell check and width line breaks with Markdwon files
 autocmd BufRead,BufNewFile *.md setlocal spell textwidth=79
