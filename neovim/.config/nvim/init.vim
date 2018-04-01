@@ -9,6 +9,7 @@ Plug 'pangloss/vim-javascript'  " JavaScript syntax
 Plug 'mxw/vim-jsx'              " React syntax
 Plug 'slim-template/vim-slim'   " Slim syntax
 Plug 'hashivim/vim-terraform'   " Terraform syntax
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " Utils
 Plug 'tpope/vim-fugitive'       " Git wrapper
@@ -32,7 +33,7 @@ colorscheme nova
 set colorcolumn=81              " Display 81th column
 set nowrap                      " Don't wrap lines
 set shiftwidth=2                " Indentation amount for < and > commands
-set tabstop=2                   " Render TABs using this many spaces
+set tabstop=2                   " Render TABs using 2 spaces
 set expandtab                   " Insert spaces when TAB is pressed
 set foldmethod=indent           " syntax base folds
 set foldlevelstart=8            " new buffer foldlevel
@@ -41,7 +42,8 @@ highlight ColorColumn ctermbg=darkred guibg=darkred
 highlight IncSearch guibg=green ctermbg=green term=underline
 
 " Display trailing spaces
-set list listchars=tab:>\ ,trail:·,eol:¬,extends:…,precedes:…
+set listchars=tab:\ \ ,trail:·,eol:¬,extends:…,precedes:…
+set list
 
 """ Status line
 set showcmd                     " Show incomplete commands
@@ -79,8 +81,16 @@ endif
 set wildmenu                    " Enable cmd menu
 set wildmode=list:longest,full  " Display cmd completion in list
 
+""" Markdown
 " Enable enable spell check and width line breaks with Markdwon files
 autocmd BufRead,BufNewFile *.md setlocal spell textwidth=79
+
+""" Crontab
+" Disable backups with contab
+autocmd FileType crontab setlocal nobackup nowritebackup
+
+""" Go
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab
 
 """ Plugins
 
