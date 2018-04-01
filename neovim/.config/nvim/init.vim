@@ -100,9 +100,12 @@ let g:jsx_ext_required = 0
 " Enable fzf history feature
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
+""" Remappings
 nnoremap <leader>pa :call Alt(expand("%"))<cr>
 nnoremap <leader>ps :Ag ""<left>
 nnoremap <leader>pS :Ag "\b<c-r><c-w>\b"<cr>:cw<cr>
+
+nnoremap <leader>w :w<cr>
 
 nnoremap <c-p> :FZF<cr>
 nnoremap <leader>pf :FZF<cr>

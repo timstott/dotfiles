@@ -48,6 +48,7 @@ Mnemonic key bindings inspired by Spacemacs
 * `<leader>pt` - open project tree
 * `<leader>pl` - open project tree at current buffer location
 * `<leader>bb` - find opened buffers
+* `<leader>w`  - write file
 
 * `vv` - vertical split
 * `ss` - horizontal split
