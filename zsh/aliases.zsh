@@ -27,6 +27,7 @@ alias gpl='git pull'
 alias gfa='git fetch --all'
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
+alias git-delete-merged-branch='git branch --merged | ag -v master | xargs git branch -d'
 
 # Vagrant
 alias vgst="vagrant global-status"
@@ -50,8 +51,18 @@ alias edit-zshrc="vim $HOME/.zshrc"
 alias edit-aliases="vim $HOME/.dotfiles/zsh/aliases.zsh"
 alias reload-shell="source $HOME/.zshrc"
 alias clip-json="clippaste | jq . -S | tee /dev/tty | clipcopy"
+alias mux="tmuxinator"
 
 # fzf history
 fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+
+# fbr - checkout git branch (including remote branches)
+fbr() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+    branch=$(echo "$branches" |
+  fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+    git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
