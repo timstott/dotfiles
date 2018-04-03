@@ -10,7 +10,7 @@
   statusHints = false
 [include]
   path = .gitconfig.user
-  path = ~/.dotfiles/gitcolors
+  path = .gitcolors
 [core]
   editor = nvim
   autocrlf = false
