@@ -65,7 +65,6 @@ echo "emacs - no comment"
 brew tap "railwaycat/emacsmacport"
 install_or_update "'emacs-mac', args: ['with-spacemacs-icon', 'with-imagemagick']" "emacs"
 
-# Ruby version manager
 echo "rbenv - ruby version manager"
 install_or_update "rbenv"
 

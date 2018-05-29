@@ -5,7 +5,7 @@ The packages and configuration necessary to make a machine feel like home.
 ## TOC
 
 - [Installation](#installation)
-- [nvim](nvim)
+- [NeoVim](#neovim)
 - [Emacs](#emacs)
 - [Tmux](#tmux)
 - [Git](#git)
@@ -36,7 +36,7 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 - Change font to `Droid Sans Mono for PowerLine` located in [fonts](fonts) directory
 - Change theme to `Nova` located in [iterm2](iterm2) directory
 
-## nvim
+## NeoVim
 
 Mnemonic key bindings inspired by Spacemacs
 
@@ -48,10 +48,12 @@ Mnemonic key bindings inspired by Spacemacs
 * `<leader>pt` - open project tree
 * `<leader>pl` - open project tree at current buffer location
 * `<leader>bb` - find opened buffers
-* `<leader>w`  - write file
+* `<leader>w`  - write buffer
+* `<leader>q`  - quite buffer
 
 * `vv` - vertical split
 * `ss` - horizontal split
+* `//` - clear highlight search
 
 ## Emacs
 

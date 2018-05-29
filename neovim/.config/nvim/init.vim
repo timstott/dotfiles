@@ -9,7 +9,7 @@ Plug 'pangloss/vim-javascript'  " JavaScript syntax
 Plug 'mxw/vim-jsx'              " React syntax
 Plug 'slim-template/vim-slim'   " Slim syntax
 Plug 'hashivim/vim-terraform'   " Terraform syntax
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " Utils
 Plug 'tpope/vim-fugitive'       " Git wrapper
@@ -22,14 +22,17 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 """ Basics
-set number                      " Line numbers are good
 set history=1000                " Store lots of :cmdline history
 set clipboard+=unnamedplus      " Add system clipboard
+set nobackup
+set nowritebackup
+set noswapfile 
 
 let mapleader="\<SPACE>"        " Change leader key to SPACE
 
 """ Appearance
 colorscheme nova
+set number                      " Line numbers are good
 set colorcolumn=81              " Display 81th column
 set nowrap                      " Don't wrap lines
 set shiftwidth=2                " Indentation amount for < and > commands
@@ -42,7 +45,7 @@ highlight ColorColumn ctermbg=darkred guibg=darkred
 highlight IncSearch guibg=green ctermbg=green term=underline
 
 " Display trailing spaces
-set listchars=tab:\ \ ,trail:·,eol:¬,extends:…,precedes:…
+set listchars=tab:>\ ,trail:·,eol:¬
 set list
 
 """ Status line
@@ -69,30 +72,16 @@ command! -nargs=+ -complete=file Ag execute 'silent grep! <args>' | copen | redr
 set splitbelow                  " Horizontal split below current
 set splitright                  " Vertical split to right of current
 
-if !&scrolloff
-  set scrolloff=3               " Show next 3 lines while scrolling
-endif
-
-if !&sidescrolloff
-  set sidescrolloff=5           " Show next 5 columns while side-scrolling
-endif
-
-""" Completion
+""" Cmd completion
 set wildmenu                    " Enable cmd menu
 set wildmode=list:longest,full  " Display cmd completion in list
 
-""" Markdown
-" Enable enable spell check and width line breaks with Markdwon files
-autocmd BufRead,BufNewFile *.md setlocal spell textwidth=79
-
-""" Crontab
-" Disable backups with contab
-autocmd FileType crontab setlocal nobackup nowritebackup
-
-""" Go
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab
-
 """ Plugins
+
+
+" Enable fzf history feature
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+
 
 " Find alternate file with alt
 function! Alt(path)
@@ -104,18 +93,23 @@ function! Alt(path)
   endif
 endfunction
 
+""" JavaScript
 " JSX syntax highlighting with .js files
 let g:jsx_ext_required = 0
 
-" Enable fzf history feature
-let g:fzf_history_dir = '~/.local/share/fzf-history'
+augroup filetypes
+  autocmd!
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufRead,BufNewFile .{tslint,eslint}rc set filetype=json
+augroup END
 
-""" Remappings
+""" Mappings
 nnoremap <leader>pa :call Alt(expand("%"))<cr>
 nnoremap <leader>ps :Ag ""<left>
 nnoremap <leader>pS :Ag "\b<c-r><c-w>\b"<cr>:cw<cr>
 
 nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q<cr>
 
 nnoremap <c-p> :FZF<cr>
 nnoremap <leader>pf :FZF<cr>
@@ -130,3 +124,5 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+nnoremap <silent> // :nohlsearch<CR>
