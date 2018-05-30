@@ -1,7 +1,8 @@
 set nocompatible
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'trevordmiller/nova-vim'   " Color scheme
+Plug 'altercation/vim-colors-solarized'   " Color scheme
+Plug 'itchyny/lightline.vim'              " Configurable tab/status line
 
 " Syntax
 Plug 'elixir-lang/vim-elixir'   " Elixir synatx
@@ -31,7 +32,8 @@ set noswapfile
 let mapleader="\<SPACE>"        " Change leader key to SPACE
 
 """ Appearance
-colorscheme nova
+set background=dark
+colorscheme solarized
 set number                      " Line numbers are good
 set colorcolumn=81              " Display 81th column
 set nowrap                      " Don't wrap lines
@@ -40,9 +42,6 @@ set tabstop=2                   " Render TABs using 2 spaces
 set expandtab                   " Insert spaces when TAB is pressed
 set foldmethod=indent           " syntax base folds
 set foldlevelstart=8            " new buffer foldlevel
-
-highlight ColorColumn ctermbg=darkred guibg=darkred
-highlight IncSearch guibg=green ctermbg=green term=underline
 
 " Display trailing spaces
 set listchars=tab:>\ ,trail:·,eol:¬
@@ -78,10 +77,12 @@ set wildmode=list:longest,full  " Display cmd completion in list
 
 """ Plugins
 
-
 " Enable fzf history feature
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
 
 " Find alternate file with alt
 function! Alt(path)
