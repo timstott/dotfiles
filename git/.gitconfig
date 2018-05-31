@@ -36,3 +36,5 @@
   autosquash = true
 [tag]
   forceSignAnnotated = true
+[commit]
+  verbose = true

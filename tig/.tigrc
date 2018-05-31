@@ -5,4 +5,4 @@ set main-view = line-number:no,interval=5 id:yes date:default author:full commit
 bind generic x !@sh -c "echo %(commit) | pbcopy"
 
 # Fixup selected commit
-bind generic + !git commit --fixup %(commit) --verbose
+bind generic + !git commit --fixup %(commit)
