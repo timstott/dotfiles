@@ -54,28 +54,10 @@ plugins=(gitfast osx rvm tmuxinator)
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$HOME/.dotfiles/bin:$HOME/go/bin:$HOME/.cargo/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=$HOME/.dotfiles/bin:$HOME/.cargo/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH
 
 export EDITOR=nvim
-export GOPATH=$HOME/go
 
-# Setting ag as the default source for fzf to respect .gitignore, .agignore
-export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
-export FZF_DEFAULT_OPTS='
-  --color dark,hl:33,hl+:37,fg+:235,bg+:136,fg+:254
-  --color info:254,prompt:37,spinner:108,pointer:235,marker:235
-'
-
-source $HOME/.dotfiles/zsh/aliases.zsh
-source $HOME/.dotfiles/zsh/history.zsh
-
-[[ -s "$HOME/.rbenv" ]] && eval "$(rbenv init -)"
-[[ -f "$HOME/.secrets" ]] && source "$HOME/.secrets"
-
-export PATH="$HOME/.yarn/bin:$PATH"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh" --no-use
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+for file in $HOME/.zconfig/*.zsh; do
+  source "$file"
+done
