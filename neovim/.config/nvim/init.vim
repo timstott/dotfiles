@@ -12,6 +12,8 @@ Plug 'slim-template/vim-slim'   " Slim syntax
 Plug 'hashivim/vim-terraform'   " Terraform syntax
 " Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
+Plug 'janko-m/vim-test'         " Run tests
+
 " Utils
 Plug 'tpope/vim-fugitive'       " Git wrapper
 Plug 'tpope/vim-rhubarb'
@@ -76,6 +78,7 @@ set wildmenu                    " Enable cmd menu
 set wildmode=list:longest,full  " Display cmd completion in list
 
 """ Plugins
+let test#strategy = "neovim"
 
 " Enable fzf history feature
 let g:fzf_history_dir = '~/.local/share/fzf-history'
@@ -127,3 +130,6 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 nnoremap <silent> // :nohlsearch<CR>
+
+nnoremap <leader>tt :TestNearest<cr>
+nnoremap <leader>tf :TestFile<cr>
