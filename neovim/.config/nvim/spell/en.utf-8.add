@@ -4,3 +4,4 @@ plugins
 Fluentd
 fluentd
 InfluxDB
+Sidekiq
