@@ -5,11 +5,7 @@ Plug 'altercation/vim-colors-solarized'   " Color scheme
 Plug 'itchyny/lightline.vim'              " Configurable tab/status line
 
 " Syntax
-Plug 'elixir-lang/vim-elixir'   " Elixir synatx
-Plug 'pangloss/vim-javascript'  " JavaScript syntax
-Plug 'mxw/vim-jsx'              " React syntax
-Plug 'slim-template/vim-slim'   " Slim syntax
-Plug 'hashivim/vim-terraform'   " Terraform syntax
+Plug 'sheerun/vim-polyglot'     " All the syntax
 " Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 Plug 'janko-m/vim-test'         " Run tests
@@ -96,10 +92,6 @@ function! Alt(path)
     exec ":e" . " " . l:alternate
   endif
 endfunction
-
-""" JavaScript
-" JSX syntax highlighting with .js files
-let g:jsx_ext_required = 0
 
 augroup filetypes
   autocmd!
