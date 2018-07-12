@@ -61,10 +61,6 @@ echo "alt - alternate file finder"
 brew tap "uptech/homebrew-oss"
 install_or_update "uptech/oss/alt" "alt"
 
-echo "emacs - no comment"
-brew tap "railwaycat/emacsmacport"
-install_or_update "'emacs-mac', args: ['with-spacemacs-icon', 'with-imagemagick']" "emacs"
-
 echo "rbenv - ruby version manager"
 install_or_update "rbenv"
 

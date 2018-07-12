@@ -6,7 +6,6 @@ The packages and configuration necessary to make a machine feel like home.
 
 - [Installation](#installation)
 - [NeoVim](#neovim)
-- [Emacs](#emacs)
 - [Tmux](#tmux)
 - [Git](#git)
 - [ZSH ](#zsh)
@@ -54,10 +53,6 @@ Mnemonic key bindings inspired by Spacemacs
 * `vv` - vertical split
 * `ss` - horizontal split
 * `//` - clear highlight search
-
-## Emacs
-
-Emacs is configured with Spacemacs (evil), see [spacemacs](spacemacs).
 
 ## Tmux
 
