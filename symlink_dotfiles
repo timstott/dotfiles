@@ -10,6 +10,11 @@ stow -v 2 \
   tig \
   tmux
 
+if [ ! -f $HOME/.vimrc ]; then
+  ln -s $HOME/.dotfiles/neovim/.config/nvim/init.vim $HOME/.vimrc
+  echo "Symlinked neovim configuration to vim"
+fi
+
 dotfiles=(
   zshrc
 )

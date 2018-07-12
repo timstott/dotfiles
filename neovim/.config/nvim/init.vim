@@ -9,6 +9,7 @@ Plug 'sheerun/vim-polyglot'     " All the syntax
 " Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 Plug 'janko-m/vim-test'         " Run tests
+Plug 'neomake/neomake'
 
 " Utils
 Plug 'tpope/vim-fugitive'       " Git wrapper
@@ -18,6 +19,7 @@ Plug 'scrooloose/nerdtree'      " You know it
 Plug 'tomtom/tcomment_vim'      " Comment
 Plug 'junegunn/fzf'             " Fuzzy finder
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
 call plug#end()
 
 """ Basics
@@ -26,6 +28,7 @@ set clipboard+=unnamedplus      " Add system clipboard
 set nobackup
 set nowritebackup
 set noswapfile 
+set undofile                    " Preserve undo history between sessions
 
 let mapleader="\<SPACE>"        " Change leader key to SPACE
 
@@ -77,10 +80,13 @@ set wildmode=list:longest,full  " Display cmd completion in list
 let test#strategy = "neovim"
 
 " Enable fzf history feature
-let g:fzf_history_dir = '~/.local/share/fzf-history'
+let g:fzf_history_dir = '~/.local/share/nvim/fzf-history'
 
 let g:lightline = {
       \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ]
+      \   }
       \ }
 
 " Find alternate file with alt
@@ -106,6 +112,7 @@ nnoremap <leader>pS :Ag "\b<c-r><c-w>\b"<cr>:cw<cr>
 
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
+nnoremap <leader>bd :bd<cr>
 
 nnoremap <c-p> :FZF<cr>
 nnoremap <leader>pf :FZF<cr>
@@ -114,6 +121,8 @@ nnoremap <leader>pl :NERDTreeFind<cr>
 nnoremap <leader>bb :Buffers<cr>
 nnoremap <silent>vv <c-w>v
 nnoremap <silent>ss <c-w>s
+
+xmap ga <Plug>(EasyAlign)
 
 " Quicker window movement
 nnoremap <c-j> <c-w>j

@@ -21,12 +21,14 @@ function install_or_update {
   if which $CMD > /dev/null 2>&1; then
     # Check is package is outdated
     if (brew outdated | grep -q package_name ); then
-      brew upgrade $1
+      brew upgrade $1 > /dev/null
     fi
   else
     brew install $1
   fi
 }
+
+brew update > /dev/null
 
 echo "stow - symlink manager"
 install_or_update "stow"
@@ -48,12 +50,16 @@ echo "ctags"
 install_or_update "ctags"
 
 echo "neovim - editor"
+XDG_CONFIG_HOME=$HOME/.config
+XDG_DATA_HOME=$HOME/.local/share
+mkdir -p $XDG_CONFIG_HOME/nvim/ftplugin
+mkdir -p $XDG_CONFIG_HOME/.config/nvim/spell
 brew tap neovim/neovim
 install_or_update "neovim" "nvim"
 
 echo "vim-plug - vim package manager"
-if [ ! -f $HOME/.local/share/nvim/site/autoload/plug.vim ]; then
-  curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+if [ ! -f $XDG_DATA_HOME/nvim/site/autoload/plug.vim ]; then
+  curl -fLo $XDG_DATA_HOME/nvim/site/autoload/plug.vim --create-dirs \
      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
@@ -84,5 +90,5 @@ install_or_update "go"
 echo "jq - json processor"
 install_or_update "jq"
 
-echo "sed"
+echo "sed - gnu sed"
 # install_or_update "

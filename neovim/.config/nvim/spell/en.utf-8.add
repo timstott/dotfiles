@@ -5,3 +5,4 @@ Fluentd
 fluentd
 InfluxDB
 Sidekiq
+Upsert

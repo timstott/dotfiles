@@ -1,6 +1,10 @@
-# The .files :rocket:
-
-The packages and configuration necessary to make a machine feel like home.
+<h1 align="center">
+  .files :rocket:
+  <br />
+  <img src="https://img.shields.io/badge/editor-neovim-green.svg">
+  <img src="https://img.shields.io/badge/shell-zsh-blue.svg">
+</h1>
+<p align="center">Packages and configuration to make a machine feel like home</p>
 
 ## TOC
 
@@ -19,14 +23,11 @@ The packages and configuration necessary to make a machine feel like home.
 git clone git@github.com:timstott/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
-# Install CLI tools
+# install packages
 ./mac
 
-# Symlink dotfiles
-./dotfiles
-
-# Optional
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+# symlink dotfiles
+./symlink_dotfiles
 ```
 
 ### iTerm2 Setup
@@ -38,20 +39,41 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 Mnemonic key bindings inspired by Spacemacs
 
-* `<SPACE>`- MapLeader
-* `<leader>pa` - open alternate file
-* `<leader>ps` - project search
-* `<leader>pS` - search project with word under cursor
-* `<leader>pf` - find file
-* `<leader>pt` - open project tree
-* `<leader>pl` - open project tree at current buffer location
-* `<leader>bb` - find opened buffers
-* `<leader>w`  - write buffer
-* `<leader>q`  - quite buffer
+`<SPACE>`- MapLeader
 
-* `vv` - vertical split
-* `ss` - horizontal split
-* `//` - clear highlight search
+### Project/File
+
+| binding      | description                                  |
+| -            | -                                            |
+| `<leader>pa` | open alternate file                          |
+| `<leader>ps` | project search                               |
+| `<leader>pS` | search project with word under cursor        |
+| `<leader>pf` | find file                                    |
+| `<leader>pt` | open project tree                            |
+| `<leader>pl` | open project tree at current buffer location |
+
+### Buffers
+
+| binding      | description         |
+| -            | -                   |
+| `<leader>q`  | quit buffer         |
+| `<leader>bd` | delete buffer       |
+| `<leader>bb` | find opened buffers |
+| `<leader>w`  | write buffer        |
+
+### Formatting
+
+| binding | description                                                                               | example |
+| -       | -                                                                                         | -       |
+| ga      | interactively align visual selection [:link:](https://github.com/junegunn/vim-easy-align) | `vipga` |
+
+### Miscellaneous
+
+| binding | description            |
+| -       | -                      |
+| `vv`    | vertical split         |
+| `ss`    | horizontal split       |
+| `//`    | clear highlight search |
 
 ## Tmux
 
@@ -61,7 +83,6 @@ Mnemonic key bindings inspired by Spacemacs
 
 ## Git
 
-* Place user config in *~/.gitconfig.user*
 * Git hook to re-index ctags post-checkout
 * Manually re-index ctags `git ctags`
 
@@ -120,9 +141,6 @@ sourced by *zshrc*.
 
 ## Credits
 
-[tmux: Productive Mouse-Free Development](http://pragprog.com/book/bhtmux/tmux) Brian P. Hogan
-
-Thoughtbot [dotfiles](http://github.com/thoughtbot/dotfiles)
-YADR [dotfiles](https://github.com/skwp/dotfiles)
-
-Thank you to the community for your support and inspiration.
+- [tmux: Productive Mouse-Free Development](http://pragprog.com/book/bhtmux/tmux) Brian P. Hogan
+- Thoughtbot [dotfiles](http://github.com/thoughtbot/dotfiles)
+- YADR [dotfiles](https://github.com/skwp/dotfiles)
