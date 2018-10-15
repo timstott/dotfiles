@@ -1,4 +1,4 @@
-Pry.editor = 'neovim'
+Pry.editor = 'vim'
 
 # Shows the ruby version
 Pry.prompt = [proc { |obj, nest_level, _| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level, _| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]

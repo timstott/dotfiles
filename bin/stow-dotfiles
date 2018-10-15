@@ -1,6 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
-stow -v 2 \
+stow \
+  --ignore "nix" \
+  --verbose 2 \
+  "$@" \
   ag \
   ctags\
   git \
@@ -14,13 +17,3 @@ if [ ! -f $HOME/.vimrc ]; then
   ln -s $HOME/.dotfiles/neovim/.config/nvim/init.vim $HOME/.vimrc
   echo "Symlinked neovim configuration to vim"
 fi
-
-dotfiles=(
-  zshrc
-)
-
-for file in "${dotfiles[@]}"
-do
-  echo "[Symlink] $file"
-  ln -s $HOME/.dotfiles/$file $HOME/.$file
-done

@@ -27,7 +27,7 @@ cd ~/.dotfiles
 ./mac
 
 # symlink dotfiles
-./symlink_dotfiles
+bin/stow-dotfiles
 ```
 
 ### iTerm2 Setup
@@ -92,19 +92,13 @@ TIP: Use `git init` in existing repos to copy the hooks
 
 ### Aliases
 
-In addition to aliases defined by Oh My Zsh plugins, custom aliases are available.
-
-#### Utilities
-
-* `fh` - search zsh history with fzf
-* `clip-json` - prettify JSON clipboard content
+Aliases inspired by Oh My Zsh plugins.
 
 #### Ruby
 
 * `be` - `bundle exec`
 * `zs` - `zeus start`
 * `zc` - `zeus console`
-* `rum` - run rubocop with files added or modified since origin/master
 
 #### Git
 
@@ -127,10 +121,6 @@ In addition to aliases defined by Oh My Zsh plugins, custom aliases are availabl
 
 * `docker-stop-all-containers` - stop all running containers
 * `docker-remove-all-containers` - remove all containers
-
-#### Vagrant
-
-* `vgst` - global status
 
 ### Secrets
 
