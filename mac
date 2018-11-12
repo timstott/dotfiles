@@ -54,7 +54,6 @@ XDG_CONFIG_HOME=$HOME/.config
 XDG_DATA_HOME=$HOME/.local/share
 mkdir -p $XDG_CONFIG_HOME/nvim/ftplugin
 mkdir -p $XDG_CONFIG_HOME/.config/nvim/spell
-brew tap neovim/neovim
 install_or_update "neovim" "nvim"
 
 echo "vim-plug - vim package manager"
