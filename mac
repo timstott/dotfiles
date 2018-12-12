@@ -42,10 +42,6 @@ install_or_update "ag"
 echo "tmux - terminal multiplexer"
 install_or_update "tmux"
 
-# Use OS X clipboard inside tmux
-echo "reattach-to-user-namespace"
-install_or_update "reattach-to-user-namespace"
-
 echo "ctags"
 install_or_update "ctags"
 
