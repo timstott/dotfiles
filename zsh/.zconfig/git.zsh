@@ -14,6 +14,13 @@ function git_current_branch() {
   echo ${ref#refs/heads/}
 }
 
+# Interactive commit finder
+function git_interactive_commit_finder() {
+  git --no-pager log --pretty=oneline --color=always -n 50 --decorate \
+    | fzf --ansi --no-sort \
+    | awk '{ print $1 }'
+}
+
 alias git='nocorrect git'
 alias gc='git commit '
 alias gcs='git commit -S'
@@ -36,5 +43,6 @@ alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
+alias grbi='git rebase -i $(git_interactive_commit_finder)^'
 alias grbm='git rebase -i origin/master'
 alias gd='git diff'
