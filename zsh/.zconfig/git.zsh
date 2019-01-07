@@ -21,6 +21,13 @@ function git_interactive_commit_finder() {
     | awk '{ print $1 }'
 }
 
+function git_fuzzy_branch_delete() {
+  local branches branch
+  branches=$(git branch) &&
+  selected_branches=$(echo "$branches" | fzf -m) &&
+  git branch -D $(echo $selected_branches | tr -d '\n')
+}
+
 alias git='nocorrect git'
 alias gc='git commit '
 alias gcs='git commit -S'
