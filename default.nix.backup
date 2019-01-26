@@ -1,0 +1,37 @@
+let
+  stable = (import ./channels.nix).stable;
+  unstable = (import ./channels.nix).unstable;
+
+
+  pkgs = import (fetchGit {
+    name = "nixpkgs-unstable-2019-01-03";
+    url = "https://github.com/NixOS/nixpkgs-channels";
+    ref = "nixpkgs-unstable";
+    rev = "b0f40b7851309ed20524f0b05bd4b1dda13d4ea4";
+  }) {};
+
+  fzf = pkgs.fzf;
+
+  nvim = import ./neovim/default.nix {
+    pkgs = pkgs;
+    fzf = fzf;
+  };
+  tmux = import ./tmux/default.nix {};
+
+  packages = [
+    fzf
+    nvim
+    tmux
+
+    pkgs.ag
+    pkgs.coreutils
+    pkgs.curl
+    pkgs.git
+    pkgs.jq
+    pkgs.keychain
+    pkgs.stow
+    pkgs.tig
+    pkgs.tree
+  ];
+in
+  packages
