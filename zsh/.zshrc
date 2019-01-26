@@ -7,7 +7,6 @@ prompt pure
 # Emacs mode
 bindkey -e
 
-alias vim=nvim
 export EDITOR=vim
 
 alias ls='ls --color=auto'

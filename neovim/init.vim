@@ -1,27 +1,3 @@
-set nocompatible
-
-call plug#begin('~/.config/nvim/plugged')
-Plug 'altercation/vim-colors-solarized'   " Color scheme
-Plug 'itchyny/lightline.vim'              " Configurable tab/status line
-
-" Syntax
-Plug 'sheerun/vim-polyglot'     " All the syntax
-" Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-
-Plug 'janko-m/vim-test'         " Run tests
-Plug 'neomake/neomake'
-
-" Utils
-Plug 'tpope/vim-fugitive'       " Git wrapper
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-surround'       " Surround pairs
-Plug 'scrooloose/nerdtree'      " You know it
-Plug 'tomtom/tcomment_vim'      " Comment
-Plug 'junegunn/fzf'             " Fuzzy finder
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
-call plug#end()
-
 """ Basics
 set history=1000                " Store lots of :cmdline history
 set clipboard+=unnamedplus      " Add system clipboard
@@ -91,12 +67,7 @@ let g:lightline = {
 
 " Find alternate file with alt
 function! Alt(path)
-  let l:alternate = system("alt " . a:path)
-  if empty(l:alternate)
-    echo "No alternate file for " . a:path . " exists!"
-  else
-    exec ":e" . " " . l:alternate
-  endif
+  echo "FIXME with projectionist!"
 endfunction
 
 augroup filetypes
@@ -134,3 +105,8 @@ nnoremap <silent> // :nohlsearch<CR>
 
 nnoremap <leader>tt :TestNearest<cr>
 nnoremap <leader>tf :TestFile<cr>
+
+" Hide statusline when fzf starts in a terminal buffer
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
