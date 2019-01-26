@@ -12,6 +12,7 @@ in
   [
     pkgs.coreutils
     pkgs.curl
+    pkgs.fzf
     pkgs.git
     pkgs.jq
     pkgs.keychain
