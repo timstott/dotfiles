@@ -28,7 +28,6 @@ function git_fuzzy_branch_delete() {
   git branch -D $(echo $selected_branches | tr -d '\n')
 }
 
-alias git='nocorrect git'
 alias gc='git commit '
 alias gcs='git commit -S'
 alias gca='git commit -a'
