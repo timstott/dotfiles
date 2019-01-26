@@ -14,6 +14,7 @@ in
     pkgs.curl
     pkgs.git
     pkgs.jq
+    pkgs.keychain
     pkgs.silver-searcher
     pkgs.stow
     pkgs.tig
