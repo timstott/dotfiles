@@ -9,9 +9,8 @@ bindkey -e
 
 alias vim=nvim
 export EDITOR=vim
-export PATH=/usr/local/sbin:$PATH
 
-export CLICOLOR=1                      # Enable ls colors
+alias ls='ls --color=auto'
 alias la='ls -lha'
 alias ll='ls -lh'
 alias mux="tmuxinator"
