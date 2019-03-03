@@ -20,6 +20,7 @@ in
     pkgs.curl
     pkgs.fzf
     pkgs.git
+    pkgs.gnupg
     pkgs.jq
     pkgs.keychain
     pkgs.silver-searcher
