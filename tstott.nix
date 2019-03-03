@@ -15,6 +15,7 @@ let
 in
   [
     neovim
+    pkgs.awscli
     pkgs.coreutils
     pkgs.curl
     pkgs.fzf
@@ -27,5 +28,6 @@ in
     pkgs.tldr
     pkgs.tmux
     pkgs.tree
+    pkgs.zip
     tmuxinator
   ]
