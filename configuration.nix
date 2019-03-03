@@ -61,6 +61,10 @@
     passwordAuthentication = false;
     permitRootLogin = "without-password";
     ports = [45331];
+    extraConfig = ''
+      # Enable automatic removal of stale sockets when connecting to the remote machine
+      StreamLocalBindUnlink yes
+    '';
   };
 
   services.ntp = {
