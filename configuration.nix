@@ -111,7 +111,13 @@
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCeJW0Flfq29mibc1dV8u4IH0IVeoN/iuvmCi8kipgQAKYTFpEdS11a0fq6YmWMmHTKK9k/AvF6HUcAETDKxDPri8ZAYqi19LkzU5ivz4gRo8WwjqK69PCC1rj2wwMl7ebRl8NhA7oYIUVYuViKlC8r4jnBgcMy1gMv5H5Io6LgeP5m5Aku8ob4P3luyuvbSB+ocq84r8Gq9JuJBvrriRpbkqBGiR/RMYsxryHVwIwXx+Z0KcZetkYTnaFP3QqZkMbbl5EVGBE7Uu7HZZsUhzm/SVQswv10kHKuXg68FqAijycvyKapF4xBxYNYG4oPPu+g3Nd2WURof0DHGgpQbfPe/81TBG2AaMizUDEHSw3//TSCKOjF9xo5PIoGyTWHuRMpigoBNA3b+favjh3tRjDYdew91WAc/SEM0/egEJD07C+7zj8PUYQxhX0y8nJVOrCyEt82P8DmSLBSK3Xtp83cwVIQA8d0VgF3drXgrc16u1gaX5iU0Uys/zLJ5tClm/tL6If0NzRsxpRLf7ssZ3RkStdyXafcAT3JuiItAhfNchnhbLJKvFUkTPNOnd2DYmYgXHNNeLLwX7gBiggwpgeRsqjCplNf/DusFMFo6gpDJ26QRWF9iPMsDr3eUIT/jfA0xmvtKcgTXz8G/RAOPzuaivv+qJLqpLpU7q9ZMuzVaQ=="
     ];
   };
-  security.sudo.wheelNeedsPassword = true;
+
+  security.sudo = {
+    wheelNeedsPassword = true;
+    extraConfig = ''
+      Defaults:tstott timestamp_timeout=120
+    '';
+  };
 
   nix.maxJobs = 8;
   powerManagement.cpuFreqGovernor = "powersave";
