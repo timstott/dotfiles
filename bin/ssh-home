@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+eval $(gpg-agent --daemon --enable-ssh-support 2> /dev/null)
+
+export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
+
+ssh root@88.198.57.174

@@ -1,0 +1,42 @@
+Host cardboard
+  Hostname cardboard.predicate.xyz
+  User tstott
+  Port 45331
+  ForwardAgent  yes
+  # exit on socket failure
+  ExitOnForwardFailure yes
+  RemoteForward /run/user/1000/gnupg/S.gpg-agent /Users/tstott/.gnupg/S.gpg-agent.extra
+
+Host red-panda.cloud
+  Hostname      red-panda.cloud.predicate.xyz
+  User          root
+  Port          22
+  ForwardAgent  yes
+
+Host mining-rig.cloud
+  Hostname      localhost
+  User          buster
+  Port          2222
+  ForwardAgent  no
+  ProxyCommand  ssh -W %h:%p red-panda.cloud
+
+Host autossh_client
+  Hostname      localhost
+  User          vagrant
+  Port          2222
+  ForwardAgent  no
+  ProxyCommand  ssh -W %h:%p tiny
+
+Host autoss_master.vagrant
+  Hostname      red-panda.vagrant
+  User          vagrant
+  Port          22
+  ForwardAgent  yes
+  IdentityFile  ~/projects/predicate_boxes/boxes/.vagrant/machines/red-panda/virtualbox/private_key
+
+Host autoss_client.vagrant
+  Hostname      localhost
+  User          autossh
+  Port          2222
+  ForwardAgent  no
+  ProxyCommand  ssh -W %h:%p autoss_master.vagrant
