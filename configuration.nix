@@ -112,6 +112,7 @@
     home = "/home/tstott";
     group = "tstott";
     extraGroups = [
+      "docker"
       # members of wheel group can sudo
       "wheel"
     ];
@@ -127,6 +128,8 @@
       Defaults:tstott timestamp_timeout=120
     '';
   };
+
+  virtualisation.docker.enable = true;
 
   nix.maxJobs = 8;
   powerManagement.cpuFreqGovernor = "powersave";
