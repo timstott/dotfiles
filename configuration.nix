@@ -110,7 +110,6 @@
     isNormalUser = true;
     createHome = true;
     home = "/home/tstott";
-    group = "tstott";
     extraGroups = [
       "docker"
       # members of wheel group can sudo
