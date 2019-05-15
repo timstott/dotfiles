@@ -74,6 +74,7 @@ augroup filetypes
   autocmd!
   autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd BufRead,BufNewFile .{tslint,eslint}rc set filetype=json
+  autocmd BufRead,BufNewFile *.go set noexpandtab|set listchars=tab:\ \ ,trail:·,eol:¬|set list
 augroup END
 
 """ Mappings
