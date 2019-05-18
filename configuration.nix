@@ -43,9 +43,12 @@
       "8.8.8.8"
       "8.8.4.4"
     ];
+  };
 
-    firewall.trustedInterfaces = [];
-    firewall.logRefusedConnections = false;
+  networking.firewall = {
+    enable = true;
+    trustedInterfaces = [];
+    logRefusedConnections = false;
   };
 
   services.udev.extraRules = ''
