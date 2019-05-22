@@ -13,6 +13,11 @@
     shell = pkgs.zsh;
   };
 
+  system.defaults.dock = {
+    show-recents = false;
+    orientation = "left";
+  };
+
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
