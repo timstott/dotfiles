@@ -4,6 +4,7 @@ let
     pkgs = pkgs;
   };
 
+  tig = pkgs.callPackage ./tig/default.nix {};
   tmux = pkgs.callPackage ./tmux/default.nix {};
 in
   [
@@ -19,9 +20,9 @@ in
     pkgs.keychain
     pkgs.silver-searcher
     pkgs.stow
-    pkgs.tig
     pkgs.tldr
     pkgs.tree
     pkgs.zip
+    tig
     tmux
   ]
