@@ -11,17 +11,9 @@ Thumbs.db
 .idea/*
 .vscode
 
-# Ctags file #
-###############
-tags
-
-# Rails files #
-###############
-rerun.txt
 .env
-
-# Tern files #
-##############
+.projections.json
 .tern-port
-
 npm-debug.log
+rerun.txt
+tags
