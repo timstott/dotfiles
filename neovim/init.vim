@@ -65,10 +65,17 @@ let g:lightline = {
       \   }
       \ }
 
-" Find alternate file with alt
-function! Alt(path)
-  echo "FIXME with projectionist!"
-endfunction
+let g:projectionist_heuristics = {
+      \ 'bin/rails': {
+      \     '*.rb': {
+      \       'alternate': 'spec/{}_spec.rb'
+      \     },
+      \     'spec/*_spec.rb': {
+      \       'type': 'test',
+      \       'alternate': '{}.rb'
+      \     }
+      \   },
+      \ }
 
 augroup filetypes
   autocmd!
@@ -78,7 +85,7 @@ augroup filetypes
 augroup END
 
 """ Mappings
-nnoremap <leader>pa :call Alt(expand("%"))<cr>
+nnoremap <leader>pa :A<cr>
 nnoremap <leader>ps :Ag ""<left>
 nnoremap <leader>pS :Ag "\b<c-r><c-w>\b"<cr>:cw<cr>
 
