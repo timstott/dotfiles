@@ -9,6 +9,7 @@ let
   };
 
   pluginNames = [
+    "ale"
     "commentary"
     "easy-align"
     "fugitive" # Git wrapper

@@ -77,6 +77,10 @@ let g:projectionist_heuristics = {
       \   },
       \ }
 
+" Linting with ALE
+let g:ale_change_sign_column_color = 1
+let g:ale_sign_column_always = 1
+
 augroup filetypes
   autocmd!
   autocmd BufRead,BufNewFile *.md set filetype=markdown
