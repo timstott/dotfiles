@@ -2,7 +2,7 @@
 {
   imports = [
     <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
-    ./monerod.nix
+    ../../modules/monerod.nix
   ];
 
   swapDevices = [
