@@ -21,7 +21,7 @@ function git_interactive_commit_finder() {
     | awk '{ print $1 }'
 }
 
-function git_fuzzy_branch_delete() {
+function git_interactive_branch_delete() {
   local branches branch
   branches=$(git branch) &&
   selected_branches=$(echo "$branches" | fzf -m) &&
