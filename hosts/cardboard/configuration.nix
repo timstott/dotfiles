@@ -77,6 +77,16 @@
 
   time.timeZone = "Europe/Berlin";
 
+  services.postgresql = {
+    # TODO: revise authentication
+    authentication = lib.mkForce(''
+      # TYPE  DATABASE  USER  CIDR-ADDRESS   METHOD
+      local   all       all                  trust
+      host    all       all   127.0.0.1/32   trust
+    '');
+    enable = true;
+  };
+
   environment.systemPackages = [
     pkgs.coreutils
     pkgs.git
