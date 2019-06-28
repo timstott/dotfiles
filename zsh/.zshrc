@@ -12,7 +12,6 @@ export EDITOR=vim
 alias ls='ls --color=auto'
 alias la='ls -lha'
 alias ll='ls -lh'
-alias mux="tmuxinator"
 alias path="echo $PATH | sed 's/:/\n/g'"
 
 

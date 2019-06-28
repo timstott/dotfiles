@@ -39,9 +39,6 @@ install_or_update "git"
 echo "ag - code search"
 install_or_update "ag"
 
-echo "tmux - terminal multiplexer"
-install_or_update "tmux"
-
 echo "ctags"
 install_or_update "ctags"
 

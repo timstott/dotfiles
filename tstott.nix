@@ -5,7 +5,6 @@ let
   };
 
   tig = pkgs.callPackage ./tig/default.nix {};
-  tmux = pkgs.callPackage ./tmux/default.nix {};
 in
   [
     neovim
@@ -24,5 +23,4 @@ in
     pkgs.tree
     pkgs.zip
     tig
-    tmux
   ]
