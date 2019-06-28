@@ -3,6 +3,7 @@
 {
   imports = [
     ./home/tmux/default.nix
+    ./zsh/default.nix
   ];
 
 

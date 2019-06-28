@@ -1,0 +1,45 @@
+autoload -U promptinit; promptinit
+prompt pure
+
+bindkey -e    # emacs mode
+
+EDITOR=vim
+
+alias ls='ls --color=always'
+alias la='ls -lha'
+alias ll='ls -lh'
+alias path="echo $PATH | sed 's/:/\n/g'"
+
+autoload -Uz compinit    # enable zsh tab-complition
+compinit
+
+HISTSIZE=100000
+SAVEHIST=100000
+HISTFILE="$HOME/.zsh_history"
+setopt BANG_HIST                 # treat the '!' character specially during expansion
+setopt EXTENDED_HISTORY          # write the history file in the ":start:elapsed;command" format
+setopt HIST_EXPIRE_DUPS_FIRST    # expire duplicate entries first when trimming history
+setopt HIST_FIND_NO_DUPS         # do not display a line previously found
+setopt HIST_IGNORE_ALL_DUPS      # delete old recorded entry if new entry is a duplicate
+setopt HIST_IGNORE_DUPS          # don't record an entry that was just recorded again
+setopt HIST_IGNORE_SPACE         # don't record an entry starting with a space
+setopt HIST_REDUCE_BLANKS        # remove superfluous blanks before recording entry
+setopt HIST_SAVE_NO_DUPS         # don't write duplicate entries in the history file
+setopt HIST_VERIFY               # don't execute immediately upon history expansion
+setopt INC_APPEND_HISTORY        # write to the history file immediately, not when the shell exits
+setopt SHARE_HISTORY             # share history between all sessions
+                                 # more options at https://bit.ly/2Clh6mH
+
+# complete history with up/down arrows (source: https://bit.ly/2COvZPx)
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search      # Up arrow
+bindkey "^[[B" down-line-or-beginning-search    # Down arrow
+
+setopt AUTO_CD    # cd into directory when command is a directory
+
+if [ -e ~/.secrets ]; then
+  source ~/.secrets
+fi
