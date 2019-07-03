@@ -4,7 +4,6 @@ stow \
   --ignore "nix" \
   --verbose 2 \
   "$@" \
-  ag \
   ctags\
   git \
   gpg \

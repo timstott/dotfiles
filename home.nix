@@ -4,6 +4,7 @@
   imports = [
     ./home/tmux/default.nix
     ./zsh/default.nix
+    ./home/ag.nix
   ];
 
 
