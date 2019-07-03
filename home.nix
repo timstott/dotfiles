@@ -5,6 +5,7 @@
     ./home/tmux/default.nix
     ./zsh/default.nix
     ./home/ag.nix
+    ./home/fzf.nix
   ];
 
 
