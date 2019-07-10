@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
-{
+let
+  mosh = import ./packages/mosh/default.nix {};
+in {
   imports = [
     ./home/ag.nix
     ./home/fzf.nix
@@ -9,9 +11,11 @@
     ./zsh/default.nix
   ];
 
+  home.packages = [
+    mosh
+  ];
 
   programs.home-manager = {
     enable = true;
   };
-
 }
