@@ -6,7 +6,6 @@ stow \
   "$@" \
   ctags\
   git \
-  gpg \
   neovim \
   ruby \
   tig
