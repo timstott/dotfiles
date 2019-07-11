@@ -8,6 +8,7 @@ in {
     ./home/direnv/default.nix
     ./home/fzf.nix
     ./home/gpg/default.nix
+    ./home/tig/default.nix
     ./home/tmux/default.nix
     ./zsh/default.nix
   ];

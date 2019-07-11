@@ -4,7 +4,6 @@ let
     pkgs = pkgs;
   };
 
-  tig = pkgs.callPackage ./tig/default.nix {};
 in
   [
     neovim
@@ -21,5 +20,4 @@ in
     pkgs.tldr
     pkgs.tree
     pkgs.zip
-    tig
   ]
