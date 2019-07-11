@@ -1,2 +1,0 @@
-# The builtin Stow ignore list ignores .gitignore.
-# This empty package-local ignore list ensures .gitignore is not ignored.

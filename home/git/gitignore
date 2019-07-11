@@ -13,8 +13,10 @@ Thumbs.db
 
 .direnv
 .env
+.mysql
 .projections.json
 .tern-port
+.nix-gems
 npm-debug.log
 rerun.txt
 tags

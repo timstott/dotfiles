@@ -4,5 +4,4 @@ stow \
   --ignore "nix" \
   --verbose 2 \
   "$@" \
-  git \
   ruby \

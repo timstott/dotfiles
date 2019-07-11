@@ -33,9 +33,6 @@ brew update > /dev/null
 echo "stow - symlink manager"
 install_or_update "stow"
 
-echo "git - version control"
-install_or_update "git"
-
 echo "ruby"
 install_or_update "ruby-install"
 install_or_update "chruby"

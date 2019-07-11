@@ -8,8 +8,6 @@
   default = current
 [advice]
   statusHints = false
-[include]
-  path = .gitconfig.user
 [core]
   editor = nvim
   autocrlf = false
@@ -29,7 +27,7 @@
   cmd="vim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
   keepbackup=false
 [init]
-  templatedir = ~/.git_template
+  templatedir = ~/.config/git/template
 [alias]
   ctags = !.git/hooks/ctags
 [rebase]
