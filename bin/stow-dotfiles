@@ -4,6 +4,5 @@ stow \
   --ignore "nix" \
   --verbose 2 \
   "$@" \
-  ctags\
   git \
   ruby \

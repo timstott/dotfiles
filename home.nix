@@ -5,6 +5,7 @@ let
 in {
   imports = [
     ./home/ag.nix
+    ./home/ctags/default.nix
     ./home/direnv/default.nix
     ./home/fzf.nix
     ./home/gpg/default.nix

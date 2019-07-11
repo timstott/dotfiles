@@ -36,9 +36,6 @@ install_or_update "stow"
 echo "git - version control"
 install_or_update "git"
 
-echo "ctags"
-install_or_update "ctags"
-
 echo "ruby"
 install_or_update "ruby-install"
 install_or_update "chruby"
