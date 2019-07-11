@@ -18,6 +18,16 @@ in {
 
   home.packages = [
     mosh
+    pkgs.awscli
+    pkgs.coreutils
+    pkgs.curl
+    pkgs.gnused
+    pkgs.htop
+    pkgs.jq
+    pkgs.keychain
+    pkgs.tldr
+    pkgs.tree
+    pkgs.zip
   ];
 
   programs.home-manager = {

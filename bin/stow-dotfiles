@@ -1,7 +1,0 @@
-#!/bin/bash
-
-stow \
-  --ignore "nix" \
-  --verbose 2 \
-  "$@" \
-  ruby \
