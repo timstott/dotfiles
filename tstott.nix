@@ -1,12 +1,8 @@
 { pkgs ? import <nixpkgs> {} }:
 let
-  neovim = import ./neovim/default.nix {
-    pkgs = pkgs;
-  };
 
 in
   [
-    neovim
     pkgs.awscli
     pkgs.coreutils
     pkgs.curl

@@ -39,23 +39,6 @@ install_or_update "git"
 echo "ctags"
 install_or_update "ctags"
 
-echo "neovim - editor"
-XDG_CONFIG_HOME=$HOME/.config
-XDG_DATA_HOME=$HOME/.local/share
-mkdir -p $XDG_CONFIG_HOME/nvim/ftplugin
-mkdir -p $XDG_CONFIG_HOME/.config/nvim/spell
-install_or_update "neovim" "nvim"
-
-echo "vim-plug - vim package manager"
-if [ ! -f $XDG_DATA_HOME/nvim/site/autoload/plug.vim ]; then
-  curl -fLo $XDG_DATA_HOME/nvim/site/autoload/plug.vim --create-dirs \
-     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
-
-echo "alt - alternate file finder"
-brew tap "uptech/homebrew-oss"
-install_or_update "uptech/oss/alt" "alt"
-
 echo "ruby"
 install_or_update "ruby-install"
 install_or_update "chruby"

@@ -6,10 +6,4 @@ stow \
   "$@" \
   ctags\
   git \
-  neovim \
   ruby \
-
-if [ ! -f $HOME/.vimrc ]; then
-  ln -s $HOME/.dotfiles/neovim/.config/nvim/init.vim $HOME/.vimrc
-  echo "Symlinked neovim configuration to vim"
-fi

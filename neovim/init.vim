@@ -36,6 +36,10 @@ set hlsearch                    " Highlight searches by default
 set ignorecase                  " Ignore case when searching...
 set smartcase                   " ...unless we type a capital
 
+""" Spell
+set spelllang=en
+set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
+
 " Use ag instead of grep
 set grepprg=ag\ --nogroup\ --nocolor\ --column
 set grepformat=%f:%l:%c%m
@@ -82,7 +86,6 @@ augroup filetypes
   autocmd!
   autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd BufRead,BufNewFile .{tslint,eslint}rc set filetype=json
-  autocmd BufRead,BufNewFile *.go set noexpandtab|set listchars=tab:\ \ ,trail:·,eol:¬|set list
 augroup END
 
 """ Mappings

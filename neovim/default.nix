@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, ... }:
 
 let
   customPlugings = {
@@ -31,8 +31,8 @@ let
   ];
 
   vimRC = builtins.readFile ./init.vim;
-in
-  pkgs.neovim.override {
+
+  neovim = pkgs.neovim.override {
     configure = {
       customRC = vimRC;
       vam.knownPlugins = pkgs.vimPlugins // customPlugings;
@@ -45,4 +45,22 @@ in
 
     vimAlias = true;
     withPython = true;
-  }
+  };
+
+  spell = builtins.readFile ./spell/en.utf-8.add;
+in {
+  home.packages = [
+    neovim
+  ];
+
+  home.file = {
+    ".config/nvim/spell/en.utf-8.add".text =  spell;
+    ".config/nvim/ftplugin/gitcommit.vim".source = ./ftplugin/gitcommit.vim;
+    ".config/nvim/ftplugin/go.vim".source = ./ftplugin/go.vim;
+    ".config/nvim/ftplugin/markdown.vim".source = ./ftplugin/markdown.vim;
+  };
+
+  programs.zsh.shellAliases = {
+    "vimrc" = "nix-store -qR $(which vim) | ag vimrc | xargs less";
+  };
+}

@@ -10,6 +10,7 @@ in {
     ./home/gpg/default.nix
     ./home/tig/default.nix
     ./home/tmux/default.nix
+    ./neovim/default.nix
     ./zsh/default.nix
   ];
 
