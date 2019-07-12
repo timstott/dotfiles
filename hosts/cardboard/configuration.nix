@@ -87,6 +87,10 @@
     enable = true;
   };
 
+  services.netdata = {
+    enable = true;
+  };
+
   environment.systemPackages = [
     pkgs.coreutils
     pkgs.git
