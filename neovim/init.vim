@@ -89,6 +89,8 @@ nnoremap <leader>pa :A<cr>
 nnoremap <leader>ps :Ag<cr>
 nnoremap <leader>pS :Ag \b<c-r><c-w>\b<cr>
 
+vnoremap pS y:Ag <c-r>"<cr>
+
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>bd :bd<cr>
@@ -109,7 +111,7 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-nnoremap <silent> // :nohlsearch<CR>
+nnoremap <silent> // :nohlsearch<cr>
 
 nnoremap <leader>tt :TestNearest<cr>
 nnoremap <leader>tf :TestFile<cr>
