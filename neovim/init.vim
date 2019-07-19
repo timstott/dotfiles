@@ -44,10 +44,6 @@ set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
 set grepprg=ag\ --nogroup\ --nocolor\ --column
 set grepformat=%f:%l:%c%m
 
-" Custom search
-" Suppress grep output and show results in quickfix window
-command! -nargs=+ -complete=file Ag execute 'silent grep! <args>' | copen | redraw!
-
 """ Scroll
 set splitbelow                  " Horizontal split below current
 set splitright                  " Vertical split to right of current
@@ -90,8 +86,8 @@ augroup END
 
 """ Mappings
 nnoremap <leader>pa :A<cr>
-nnoremap <leader>ps :Ag ""<left>
-nnoremap <leader>pS :Ag "\b<c-r><c-w>\b"<cr>:cw<cr>
+nnoremap <leader>ps :Ag<cr>
+nnoremap <leader>pS :Ag \b<c-r><c-w>\b<cr>
 
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
