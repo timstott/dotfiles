@@ -3,12 +3,14 @@
   <br />
   <img src="https://img.shields.io/badge/editor-neovim-green.svg">
   <img src="https://img.shields.io/badge/shell-zsh-blue.svg">
+  <img src="https://img.shields.io/badge/build%20with-nixos-9cf.svg">
 </h1>
-<p align="center">Packages and configuration to make a machine feel like home</p>
+<p align="center">Packages and configuration to make a machine feel like home (compatible with Linux/MacOS)</p>
 
 ## TOC
 
 - [Installation](#installation)
+  - [MacOS](#macos)
 - [NeoVim](#neovim)
 - [Tmux](#tmux)
 - [Git](#git)
@@ -19,16 +21,10 @@
 
 ## Installation
 
-```
-git clone git@github.com:timstott/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
+### MacOS
 
-# install packages
-./mac
-
-# symlink dotfiles
-bin/stow-dotfiles
-```
+- Install Nix Package Manager in multi-user mode, [docs](https://nixos.org/nix/manual/#sect-multi-user-installation)
+- Install Home Manager [docs](https://github.com/rycee/home-manager#installation)
 
 ### iTerm2 Setup
 
