@@ -61,7 +61,9 @@ augroup END
 
 let NERDTreeMinimalUI=1
 
-let test#strategy = "neovim"
+let test#strategy = 'dispatch'
+let test#ruby#bundle_exec = 0
+let test#ruby#use_binstubs = 0
 
 " Enable fzf history feature
 let g:fzf_history_dir = '~/.local/share/nvim/fzf-history'

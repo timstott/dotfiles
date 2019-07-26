@@ -26,6 +26,7 @@ let
     "solarized"
     "surround"
     "vim-abolish"
+    "vim-dispatch"
     "vim-projectionist"
     "vim-test"
     "vim-repeat"
