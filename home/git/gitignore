@@ -11,8 +11,9 @@ Thumbs.db
 .idea/*
 .vscode
 
-.direnv
 .env
+.envrc
+.direnv
 .mysql
 .projections.json
 .tern-port
