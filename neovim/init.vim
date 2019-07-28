@@ -121,3 +121,30 @@ nnoremap <silent> // :nohlsearch<cr>
 nnoremap <leader>tt :TestNearest<cr>
 nnoremap <leader>tf :TestFile<cr>
 
+let s:file_backup_dir='~/.local/share/nvim/file-history'
+function! BackupCurrentFile()
+  if !isdirectory(expand(s:file_backup_dir))
+    let cmd = 'mkdir -p ' . s:file_backup_dir . ';'
+    let cmd .= 'cd ' . s:file_backup_dir . ';'
+    let cmd .= 'git init;'
+    call system(cmd)
+  endif
+  let file = expand('%:p')
+  if file =~ fnamemodify(s:file_backup_dir, ':t') | return | endif
+  let file_dir = s:file_backup_dir . expand('%:p:h')
+  let backup_file = s:file_backup_dir . file
+  let cmd = ''
+  if !isdirectory(expand(file_dir))
+    let cmd .= 'mkdir -p ' . file_dir . ';'
+  endif
+  let cmd .= 'cp ' . file . ' ' . backup_file . ';'
+  let cmd .= 'cd ' . s:file_backup_dir . ';'
+  let cmd .= 'git add ' . backup_file . ';'
+  let cmd .= 'git commit -m "[backup] ' . file .'";'
+  call jobstart(cmd)
+endfunction
+
+augroup file_backup
+  autocmd!
+  autocmd BufWritePost * call BackupCurrentFile()
+augroup end
