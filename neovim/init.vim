@@ -36,13 +36,13 @@ set hlsearch                    " Highlight searches by default
 set ignorecase                  " Ignore case when searching...
 set smartcase                   " ...unless we type a capital
 
-""" Spell
-set spelllang=en
-set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
-
 " Use ag instead of grep
 set grepprg=ag\ --nogroup\ --nocolor\ --column
 set grepformat=%f:%l:%c%m
+
+""" Spell
+set spelllang=en
+set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
 
 """ Scroll
 set splitbelow                  " Horizontal split below current
@@ -53,10 +53,21 @@ set wildmenu                    " Enable cmd menu
 set wildmode=list:longest,full  " Display cmd completion in list
 
 """ Plugins
+augroup filetypes
+  autocmd!
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufRead,BufNewFile .{tslint,eslint}rc set filetype=json
+augroup END
+
 let test#strategy = "neovim"
 
 " Enable fzf history feature
 let g:fzf_history_dir = '~/.local/share/nvim/fzf-history'
+
+" Hide statusline when fzf starts in a terminal buffer
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 let g:lightline = {
       \ 'colorscheme': 'solarized',
@@ -77,12 +88,6 @@ let g:projectionist_heuristics = {
       \     }
       \   },
       \ }
-
-augroup filetypes
-  autocmd!
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
-  autocmd BufRead,BufNewFile .{tslint,eslint}rc set filetype=json
-augroup END
 
 """ Mappings
 nnoremap <leader>pa :A<cr>
@@ -116,7 +121,3 @@ nnoremap <silent> // :nohlsearch<cr>
 nnoremap <leader>tt :TestNearest<cr>
 nnoremap <leader>tf :TestFile<cr>
 
-" Hide statusline when fzf starts in a terminal buffer
-autocmd! FileType fzf
-autocmd  FileType fzf set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
