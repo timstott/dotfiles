@@ -8,7 +8,6 @@ EDITOR=vim
 alias ls='ls --color=always'
 alias la='ls -lha'
 alias ll='ls -lh'
-alias path="echo $PATH | sed 's/:/\n/g'"
 
 autoload -Uz compinit    # enable zsh tab-complition
 compinit

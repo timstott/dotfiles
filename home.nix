@@ -2,6 +2,7 @@
 
 let
   mosh = import ./packages/mosh/default.nix {};
+  show-path = import ./packages/show-path/default.nix {};
 in {
   imports = [
     ./home/ag.nix
@@ -17,6 +18,7 @@ in {
   ];
 
   home.packages = [
+    show-path
     mosh
     pkgs.awscli
     pkgs.coreutils
