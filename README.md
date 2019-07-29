@@ -37,25 +37,38 @@ Mnemonic key bindings inspired by Spacemacs
 
 `<SPACE>`- MapLeader
 
-### Project/File
+### Project
 
 | binding      | description                                  |
 | -            | -                                            |
-| `<leader>pa` | open alternate file                          |
-| `<leader>ps` | project search                               |
-| `<leader>pS` | search project with word under cursor        |
-| `<leader>pf` | find file                                    |
 | `<leader>pt` | open project tree                            |
 | `<leader>pl` | open project tree at current buffer location |
+
+
+### File
+
+| binding      | description                          |
+| -            | -                                    |
+| `<leader>ff` | find file                            |
+| `<leader>fa` | open alternate file                  |
+| `<leader>fp` | copy relative file path to clipboard |
 
 ### Buffers
 
 | binding      | description         |
 | -            | -                   |
 | `<leader>q`  | quit buffer         |
-| `<leader>bd` | delete buffer       |
-| `<leader>bb` | find opened buffers |
 | `<leader>w`  | write buffer        |
+| `<leader>bb` | find opened buffers |
+| `<leader>bd` | delete buffer       |
+
+### Search
+
+| binding      | description                           |
+| -            | -                                     |
+| `<leader>ps` | interactive search                    |
+| `<leader>pS` | search project with word under cursor |
+| `//`         | clear highlight search                |
 
 ### Formatting
 
@@ -69,7 +82,6 @@ Mnemonic key bindings inspired by Spacemacs
 | -       | -                      |
 | `vv`    | vertical split         |
 | `ss`    | horizontal split       |
-| `//`    | clear highlight search |
 
 ## Tmux
 

@@ -59,6 +59,8 @@ augroup filetypes
   autocmd BufRead,BufNewFile .{tslint,eslint}rc set filetype=json
 augroup END
 
+let NERDTreeMinimalUI=1
+
 let test#strategy = "neovim"
 
 " Enable fzf history feature
@@ -90,33 +92,41 @@ let g:projectionist_heuristics = {
       \ }
 
 """ Mappings
-nnoremap <leader>pa :A<cr>
-nnoremap <leader>ps :Ag<cr>
-nnoremap <leader>pS :Ag \b<c-r><c-w>\b<cr>
 
-vnoremap pS y:Ag <c-r>"<cr>
-
-nnoremap <leader>w :w<cr>
-nnoremap <leader>q :q<cr>
-nnoremap <leader>bd :bd<cr>
-
-nnoremap <c-p> :FZF<cr>
-nnoremap <leader>pf :FZF<cr>
+" Project
 nnoremap <leader>pt :NERDTreeToggle<cr>
 nnoremap <leader>pl :NERDTreeFind<cr>
+nnoremap <leader>pf :echo "moved to \<leader\>ff"<cr>
+nnoremap <leader>pa :echo "moved to \<leader\>fa"<cr>
+
+" File
+nnoremap <c-p> :FZF<cr>
+nnoremap <leader>ff :FZF<cr>
+nnoremap <leader>fa :A<cr>
+nnoremap <silent>fp :let @" = expand("%")<cr>
+
+" Buffers
+nnoremap <leader>q :q<cr>
+nnoremap <leader>w :w<cr>
 nnoremap <leader>bb :Buffers<cr>
+nnoremap <leader>bd :bd<cr>
 nnoremap <silent>vv <c-w>v
 nnoremap <silent>ss <c-w>s
 
+" Search
+nnoremap <leader>ps :Ag<cr>
+nnoremap <leader>pS :Ag \b<c-r><c-w>\b<cr>
+vnoremap pS y:Ag <c-r>"<cr>
+nnoremap <silent> // :nohlsearch<cr>
+
+" Formatting
 xmap ga <Plug>(EasyAlign)
 
-" Quicker window movement
+" Movement
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-
-nnoremap <silent> // :nohlsearch<cr>
 
 nnoremap <leader>tt :TestNearest<cr>
 nnoremap <leader>tf :TestFile<cr>

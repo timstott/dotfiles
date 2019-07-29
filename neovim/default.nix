@@ -28,6 +28,7 @@ let
     "vim-abolish"
     "vim-projectionist"
     "vim-test"
+    "vim-repeat"
   ];
 
   vimRC = builtins.readFile ./init.vim;
