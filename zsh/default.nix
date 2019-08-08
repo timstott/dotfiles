@@ -15,11 +15,14 @@ let
 in {
   home.packages = [
     pureZsh
+    pkgs.nix-zsh-completions
   ];
 
   programs.zsh = {
     enable = true;
 
+    # complition is enabled in zshrc
+    enableCompletion = false;
     initExtra = zshConf;
   };
 }

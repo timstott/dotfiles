@@ -1,6 +1,22 @@
 autoload -U promptinit; promptinit
 prompt pure
 
+setopt EXTENDEDGLOB
+autoload -Uz compinit
+# Globbing expression
+# - '#q' is an explicit glob qualifier that makes globbing work within zsh's [[ ]] construct.
+# - 'N' makes the glob pattern evaluate to nothing when it doesn't match (rather than throw a globbing error)
+# - '.' matches "regular files"
+# - 'mh+24' matches files that are older than 24 hours.
+# Source: https://gist.github.com/ctechols/ca1035271ad134841284
+if [[ -n $HOME/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+  compdump
+else
+  compinit -C
+fi
+unsetopt EXTENDEDGLOB
+
 bindkey -e    # emacs mode
 
 EDITOR=vim
@@ -8,9 +24,6 @@ EDITOR=vim
 alias ls='ls --color=always'
 alias la='ls -lha'
 alias ll='ls -lh'
-
-autoload -Uz compinit    # enable zsh tab-complition
-compinit
 
 HISTSIZE=100000
 SAVEHIST=100000
