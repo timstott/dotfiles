@@ -151,4 +151,7 @@
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "19.03";
+
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.channel = https://nixos.org/channels/nixos-19.03;
 }
