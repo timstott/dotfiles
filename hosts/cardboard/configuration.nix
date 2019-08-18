@@ -66,13 +66,8 @@
     '';
   };
 
-  services.ntp = {
+  services.timesyncd = {
     enable = true;
-    servers = [
-      "ntp1.hetzner.de"
-      "ntp2.hetzner.com"
-      "ntp3.hetzner.net"
-    ];
   };
 
   time.timeZone = "Europe/Berlin";
