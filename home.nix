@@ -11,6 +11,7 @@ in {
     ./home/fzf.nix
     ./home/git/default.nix
     ./home/gpg/default.nix
+    ./home/ruby/default.nix
     ./home/tig/default.nix
     ./home/tmux/default.nix
     ./neovim/default.nix
