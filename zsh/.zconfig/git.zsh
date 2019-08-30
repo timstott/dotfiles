@@ -16,7 +16,7 @@ function git_current_branch() {
 
 # Interactive commit finder
 function git_interactive_commit_finder() {
-  git --no-pager log --pretty=oneline --color=always -n 50 --decorate \
+  git log --color=always -n 50 --pretty=format:'%C(magenta)%h %d%Creset %s' \
     | fzf --ansi --no-sort \
     | awk '{ print $1 }'
 }
@@ -26,6 +26,20 @@ function git_interactive_branch_delete() {
   branches=$(git branch) &&
   selected_branches=$(echo "$branches" | fzf -m) &&
   git branch -D $(echo $selected_branches | tr -d '\n')
+}
+
+# Interactive branch checkout
+function gci {
+  local branches branch
+  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") || return
+  branch=$(
+    echo "$branches" \
+      | fzf --no-multi \
+            --ansi \
+            --preview-window=65% \
+            --preview="git log --color=always --max-count 30 --pretty=format:'%C(magenta)%h%Creset %s %Cgreen%an%Creset' {}"
+  ) || return
+  git checkout "$branch"
 }
 
 alias gc='git commit '

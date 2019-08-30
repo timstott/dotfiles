@@ -111,6 +111,7 @@ Aliases inspired by Oh My Zsh plugins.
 #### Git
 
 * `gco` - checkout
+* `gci` - interactive branch checkout (fzf)
 * `gst` - status
 * `gb` - branch
 * `gc` - commit
@@ -124,6 +125,7 @@ Aliases inspired by Oh My Zsh plugins.
 * `gfa` - fetch all branches and tags
 * `grbc` - rebase continue
 * `grba` - rebase abort
+* `grbi` - interactive rebase (fzf)
 
 #### Docker
 
