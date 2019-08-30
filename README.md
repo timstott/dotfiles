@@ -121,7 +121,7 @@ Aliases inspired by Oh My Zsh plugins.
 * `gcs!` - amend, sign and commit
 * `gca!` - stage, amend and commit
 * `gcas!` - stage, amend, sign and commit
-* `gfa` - fetch all
+* `gfa` - fetch all branches and tags
 * `grbc` - rebase continue
 * `grba` - rebase abort
 
