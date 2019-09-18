@@ -2,7 +2,6 @@
 {
   imports = [
     <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
-    ../../modules/monerod.nix
   ];
 
   swapDevices = [
@@ -83,7 +82,7 @@
   };
 
   services.netdata = {
-    enable = true;
+    enable = false;
   };
 
   environment.systemPackages = [
