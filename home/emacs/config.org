@@ -1,0 +1,197 @@
+#+PROPERTY: header-args :tangle yes
+
+* EMACS
+** Appearance
+Font size
+#+BEGIN_SRC emacs-lisp
+;; Increase C-x C-=
+;; Decrease C-x C--
+;; Reset C-x C-0
+(add-to-list 'default-frame-alist '(font . "Source Code Pro-14"))
+(set-face-attribute 'default t :font "Source Code Pro-14")
+#+END_SRC
+
+Line numbers
+#+BEGIN_SRC emacs-lisp
+;; Always display line numbers
+(global-display-line-numbers-mode t)
+
+;; Display column number in the status bar
+(setq column-number-mode t)
+#+END_SRC
+
+Display trailing whitespace
+#+BEGIN_SRC emacs-lisp
+(setq whitespace-style '(face lines-tail)
+      whitespace-line-column 80)
+(add-hook 'prog-mode-hook #'whitespace-mode)
+#+END_SRC
+
+Miscelanous
+#+BEGIN_SRC emacs-lisp
+(setq ring-bell-function 'ignore)
+(blink-cursor-mode 0)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(toggle-scroll-bar -1)
+#+END_SRC
+
+Theme
+#+BEGIN_SRC emacs-lisp
+(require 'solarized)
+(load-theme 'solarized-dark t)
+#+END_SRC
+
+** Buffers
+
+*** Backup
+
+Enable Emacs backup
+#+BEGIN_SRC emacs-lisp
+;; store all backup and autosave files in the tmp dir
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
+;; autosave the undo-tree history
+(setq undo-tree-history-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq undo-tree-auto-save-history t)
+
+(setq make-backup-files t     ;; Backup file first time it is saved
+      backup-by-copying t
+      vc-make-backup-files t  ;; Backup versioned files
+      version-control t       ;; Add version numbers to backups
+      delete-old-versions t
+      delete-by-moving-to-trash t
+      kept-old-versions 6     ;; Number of oldest versions to keep.
+      kept-new-versions 9     ;; Number of newest versions to keep.
+)
+#+END_SRC
+
+** Project Navigation
+
+#+BEGIN_SRC emacs-lisp
+;;(setq projectile-completion-system 'ivy)
+
+;; need enable projectile mode via keybinding
+;; Add known projects directories
+(setq projectile-project-search-path '("~/projects/"))
+
+(counsel-projectile-mode)
+;; required by projectile-ag
+(require 'subr-x)
+#+END_SRC
+
+** Source Control
+
+Enable Magit!
+#+BEGIN_SRC emacs-lisp
+(require 'magit)
+(global-set-key (kbd "C-x g") 'magit-status)
+#+END_SRC
+
+Commit uncommited changes to dedicated work-in-progress branch (source [[https://magit.vc/manual/magit/Wip-Modes.html][Magit.vc]]).
+#+BEGIN_SRC emacs-lisp
+;; Disabled because too slow
+;;(magit-wip-mode)
+#+END_SRC
+
+Enable quick access Magit features (stage, blame, diff) on version controlled files.
+#+BEGIN_SRC emacs-lisp
+(define-key magit-file-mode-map
+  (kbd "C-c g") 'magit-file-dispatch)
+#+END_SRC
+
+** Ivy
+#+BEGIN_SRC emacs-lisp
+(ivy-mode 1)
+
+(setq ivy-use-virtual-buffers t)
+(setq ivy-count-format "%d/%d ")
+
+;; (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+#+END_SRC
+
+** Org Mode
+
+#+BEGIN_SRC emacs-lisp
+;; Enable line wrap
+(setq org-startup-truncated nil)
+#+END_SRC
+
+** Evil Mode
+
+Use <SPC> as leader key
+#+BEGIN_SRC emacs-lisp
+;; configure evil before it is enabled
+(setq evil-want-C-u-scroll t)
+;; TODO: disable indent in org-mode only
+;;(setq evil-auto-indent nil)
+
+(require 'evil-leader)
+;; enable evil-leader before evil-mode to make it available in initial buffers
+(global-evil-leader-mode)
+
+(evil-leader/set-leader "<SPC>")
+
+(evil-leader/set-key
+  "ff" 'counsel-projectile-find-file
+)
+
+(evil-leader/set-key
+  "ps" 'counsel-projectile-ag
+  "pp" 'counsel-projectile-switch-project
+)
+
+(evil-leader/set-key
+  "q" 'evil-quit
+  "w" 'evil-write
+  "bb" 'counsel-projectile-switch-to-buffer
+)
+
+(evil-leader/set-key
+  "vv" 'evil-window-vsplit
+  "ss" 'evil-window-split
+)
+#+END_SRC
+
+Make ~Evil~ treat Emacs symbols as a words (source [[https://emacs.stackexchange.com/a/20717/25493][StackOverflow]]). This will include ~_~ and ~-~ in words.
+#+BEGIN_SRC emacs-lisp
+(with-eval-after-load 'evil
+  (defalias #'forward-evil-word #'forward-evil-symbol)
+  (setq-default evil-symbol-word-search t))
+#+END_SRC
+
+Enable [[https://github.com/tpope/vim-surround][surround.vim]] emulation.
+#+BEGIN_SRC emacs-lisp
+(require 'evil-surround)
+(global-evil-surround-mode 1)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(require 'evil)
+(evil-mode t)
+#+END_SRC
+
+*** Tips
+Toggle ~evil-mode~ with ~CTRL-Z~.
+
+** Custom functions
+Reload configuration
+#+BEGIN_SRC emacs-lisp
+(defun reload-config ()
+  "Reloads ~/.emacs.d/config.org at runtime"
+  (interactive)
+  (org-babel-load-file (concat user-emacs-directory "config.org")))
+(global-set-key (kbd "C-c r") 'reload-config)
+#+END_SRC
+
+Open configuration
+#+BEGIN_SRC emacs-lisp
+(defun open-config ()
+  (interactive)
+  (find-file (concat user-emacs-directory "config.org")))
+(global-set-key (kbd "C-c e") 'open-config)
+#+END_SRC

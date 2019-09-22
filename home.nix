@@ -8,6 +8,7 @@ in {
     ./home/ag.nix
     ./home/ctags/default.nix
     ./home/direnv/default.nix
+    ./home/emacs/default.nix
     ./home/fzf.nix
     ./home/git/default.nix
     ./home/gpg/default.nix
