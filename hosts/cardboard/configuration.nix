@@ -33,11 +33,7 @@
         }
       ];
     };
-    localCommands = ''
-      ip -6 addr add '2a01:4f8:222:588::/64' dev 'eth0' || true
-      ip -4 route change '88.198.57.160/27' via '88.198.57.161' dev 'eth0' || true
-      ip -6 route add default via 'fe80::1' dev eth0 || true
-    '';
+    enableIPv6 = false;
     nameservers = [
       "8.8.8.8"
       "8.8.4.4"
