@@ -1,11 +1,11 @@
-{ lib, ...}:
+{ lib, pkgs, ...}:
 
 let
-  pkgs = import(fetchGit {
-    name = "nixpkgs-unstable-2019-01-24";
-    url = "https://github.com/NixOS/nixpkgs-channels";
-    ref = "nixpkgs-unstable";
-    rev = "11cf7d6e1ffd5fbc09a51b76d668ad0858a772ed";
+  tmux = pkgs.callPackage(pkgs.fetchurl {
+    # tmux 2.8 package
+    # https://github.com/NixOS/nixpkgs/blob/76f803f44e2d085c929be6ac78f41631b5adfd35/pkgs/tools/misc/tmux/default.nix
+    url = "https://raw.githubusercontent.com/NixOS/nixpkgs/76f803f44e2d085c929be6ac78f41631b5adfd35/pkgs/tools/misc/tmux/default.nix";
+    sha256 = "09mi4ymhmyz5rr0skq4vq20kwx18hq0qsbihrd2x2n4nmygpdrng";
   }) {};
 
   tmuxConf = lib.strings.concatStrings([
@@ -15,7 +15,7 @@ let
 
 in {
   home.packages = [
-    pkgs.tmux
+    tmux
     pkgs.tmuxinator
   ];
 
