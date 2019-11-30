@@ -21,7 +21,6 @@ in {
   home.packages = [
     show-path
     mosh
-    pkgs.awscli
     pkgs.coreutils
     pkgs.curl
     pkgs.gnused
