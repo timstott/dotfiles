@@ -1,4 +1,4 @@
-{ lib, ...}:
+{ config, lib, ...}:
 
 let
   pkgs = import(fetchGit {
@@ -21,6 +21,10 @@ in {
 
   home.file = {
     ".tmux.conf".text = tmuxConf;
+  };
+
+  xdg.configFile = {
+    "tmuxinator/dotfiles.yml".source = ./projects/dotfiles.yml;
   };
 
   programs.zsh.shellAliases = {

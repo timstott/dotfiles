@@ -1,0 +1,10 @@
+name: dotfiles
+root: ~/projects/dotfiles
+
+windows:
+  - editor:
+      layout: main-horizontal
+      panes:
+        - vim
+        -
+        -
