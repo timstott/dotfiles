@@ -1,16 +1,14 @@
 { stdenv, fetchFromGitHub }:
 
 stdenv.mkDerivation rec {
-  version = "37fc76d8a74b98a9fbcc697ca7efd600e669311e";
+  version = "v1.11.0";
   name = "pure-zsh-prompt-${version}";
-
-  patches = [ ./pure-prompt-color.diff ];
 
   src = fetchFromGitHub {
     owner = "sindresorhus";
     repo = "pure";
     rev = "${version}";
-    sha256 = "0j1pqncvwa1f9s5vwv526y3rhfzpvi04pywwdj0ndrwh8s86zi47";
+    sha256 = "0nzvb5iqyn3fv9z5xba850mxphxmnsiq3wxm1rclzffislm8ml1j";
   };
 
   installPhase = ''
