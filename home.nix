@@ -27,6 +27,7 @@ in {
     pkgs.htop
     pkgs.jq
     pkgs.keychain
+    pkgs.pass
     pkgs.tldr
     pkgs.tree
     pkgs.zip
